@@ -33,12 +33,15 @@
 
     background-color: black;
     border: 1px solid beige;
-    color:beige;
-    
+
     font-weight: 400;
     text-align: center;
     width:150px;
     height: 30px;
+}
+
+#navbar .container-fluid .row .col-navbar #iniciar-sesion-buttom a{
+    color:beige;
 }
 
 #bienvenido{
