@@ -12,6 +12,7 @@ const PassportLocal = require('passport-local').Strategy;
 
 //config
 
+
 app.set('port',process.env.PORT || 3000);
 app.set('views',path.join(__dirname,'views')); 
 app.set('view engine','ejs');
@@ -63,6 +64,7 @@ passport.deserializeUser(function(id,done){
 });
 
 // rutas
+
 app.use(require('./routes/select.js'));
 // app.use(require('./routes/update.js'));
 // app.use(require('./routes/delete.js'));
@@ -72,6 +74,8 @@ app.use(require('./routes/select.js'));
 app.use(require('./routes/login.js'));
 //SOLO USAR DROP AL FINAL O PRODUCIRA PROBLEMAS CON LA TABLA A ELIMINAR POR LOS DATOS
 
+
+app.use(express.static(path.join(__dirname,'public')));
 
 app.listen(app.get('port'),()=> {
     console.log('Servidor en puerto' ,app.get('port'))
