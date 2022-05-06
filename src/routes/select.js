@@ -1,8 +1,8 @@
 const express = require('express');
+const req = require('express/lib/request');
 const passport = require('passport');
 const { commit } = require('../database');
 const router = express.Router();
-
 const conn = require('../database');
 
 //QUERYS DEL INDEX
@@ -30,8 +30,15 @@ router.get('/', (req,res) => {
 
 
 
-//QUERYS FORMULARIO 
-
+//QUERYS Editar perfil usuario 
+router.get('/editarPerfilUsuario', (req,res) => {
+    conn.query('Select DISTINCT Categoria FROM categorias as c where c.Categoria != NULL', (err,resp,campos) => {
+        console.log(resp);
+        res.render('editarPerfilUsuario.ejs'{
+            datos: resp
+        });
+    });
+});
 
 
 
@@ -176,6 +183,7 @@ router.get('/', (req,res) => {
 //     });
 // });
 
-
+const crud = require('./routes/crud');
+router.post('/save', crud.save);
 
 module.exports = router;
