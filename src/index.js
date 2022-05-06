@@ -8,6 +8,7 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const conn = require('./database.js');
+const { json } = require('express/lib/response');
 const PassportLocal = require('passport-local').Strategy;
 
 //config
@@ -74,6 +75,9 @@ app.use(require('./routes/select.js'));
 app.use(require('./routes/login.js'));
 //SOLO USAR DROP AL FINAL O PRODUCIRA PROBLEMAS CON LA TABLA A ELIMINAR POR LOS DATOS
 
+//PARA EL CRUD crud.js y guardar los datos del formulario en un json
+app.use(express.urlencoded(extended:false));
+app.use(express.json());
 
 app.use(express.static(path.join(__dirname,'public')));
 

@@ -5,6 +5,8 @@ const router = express.Router();
 
 const conn = require('../database');
 
+//QUERYS DEL INDEX
+//MOSTRAR PYMES INDEX
 router.get('/', (req,res) => {
     conn.query('Select Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud as f JOIN categorias as c WHERE estado_sol = "Aprobado" and f.Rut=c.Rut', (err,resp,campos) => {
         console.log(resp);
@@ -13,7 +15,7 @@ router.get('/', (req,res) => {
         });
     });
 });
-
+//MOTRAR CATEGORIAS INDEX
 router.get('/', (req,res) => {
     conn.query('Select DISTINCT Categoria FROM categorias as c where c.Categoria != NULL', (err,resp,campos) => {
         console.log(resp);
@@ -22,6 +24,17 @@ router.get('/', (req,res) => {
         });
     });
 });
+//QUERY FILTRADO POR CATEGORIA INDEX
+
+//QUERY BARRA DE BUSQUEDA INDEX
+
+
+
+//QUERYS FORMULARIO 
+
+
+
+
 
 // router.get('/correcto', (req,res,next) => {
 //     if(req.isAuthenticated()) return next();
