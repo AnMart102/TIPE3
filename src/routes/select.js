@@ -6,19 +6,19 @@ const router = express.Router();
 const conn = require('../database');
 
 router.get('/', (req,res) => {
-    conn.query('Select Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud as f JOIN categorias as c WHERE estado_sol = 'Aprobado' and f.Rut=c.Rut;', (err,resp,campos) => {
+    conn.query('Select Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud as f JOIN categorias as c WHERE estado_sol = "Aprobado" and f.Rut=c.Rut', (err,resp,campos) => {
         console.log(resp);
         res.render('index.ejs',{
-            datos: resps
+            datos: resp
         });
     });
 });
 
 router.get('/', (req,res) => {
-    conn.query('Select DISTINCT Categoria FROM categorias as c where c.Categoria != 'NULL'', (err,resp,campos) => {
+    conn.query('Select DISTINCT Categoria FROM categorias as c where c.Categoria != NULL', (err,resp,campos) => {
         console.log(resp);
         res.render('index.ejs',{
-            datos: resps
+            datos: resp
         });
     });
 });
