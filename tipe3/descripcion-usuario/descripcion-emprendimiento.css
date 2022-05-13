@@ -7,7 +7,7 @@
 
 #navbar{
     height: 80px;
-    background-color: rgb(209, 205, 205);
+    border-bottom: 1px solid #9E9E9E;
 }
 
 
@@ -17,6 +17,7 @@
 
 #navbar .container-fluid .row .col-navbar{
     padding-top: 20px;
+    border-right: 1px solid #9E9E9E;
 }
 
 #navbar .container-fluid .row .col-navbar a{
@@ -26,7 +27,7 @@
 #iniciar-sesion-buttom{
 
     background-color: black;
-    border: 1px solid black;
+    border: 1px solid beige;
 
     font-weight: 400;
     text-align: center;
@@ -42,7 +43,6 @@
     height: 540px;
     width: 90%;
     margin:0 auto;
-    margin-top: 30px;
     display:flex;
 }
 
