@@ -5,7 +5,7 @@ const router = express.Router();
 const conn = require('../database');
 
 exports.upgrade = (req, res)=>{
-    conn.query('Select Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud as f JOIN categorias as c WHERE estado_sol = "Aprobado" and f.Rut=c.Rut', (error,results) =>{
+    conn.query('SELECT Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud AS f JOIN categorias as c WHERE f.id_categoria=c.id_categoria', (error,results) =>{
         if(error){
             throw error;
         }else{

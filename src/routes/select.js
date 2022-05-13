@@ -27,7 +27,31 @@ const f5_index= require('../controllers/f5_index.js');
 //    });
 //});
 //QUERY FILTRADO POR CATEGORIA INDEX
-
+router.get('//:id_categoria', (req,res) => {
+    const id_categoria = req.params.id_categoria;
+    conn.query('SELECT Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud AS f JOIN categorias as c WHERE c.id_categoria = ? and f.id_categoria=c.id_categoria', [id_categoria], (error,results) => {
+        if(error){
+            throw error;
+        }else{
+            res.render('/', {categoria:results[0]});
+        }
+   });
+});
+//CON LO ANTERIOR DEBERIA BASTAR, SI FALTA ALGO ES LO QUE ESTA ABAJO, PARA ACTUALIZAR LA PAGINA
+// exports.actualizarCategorias = (req, res)=>{
+//     const id_categoria = req.body.id_categoria;
+//     const Categoria = req.body.Categoria;
+//     conn.query('SELECT Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud AS f JOIN categorias as c WHERE c.id_categoria = ? and f.id_categoria=c.id_categoria', [{id_categoria:id_categoria}], (error,results)=>{
+//         if(error){
+//             throw error;
+//         }else{
+//             res.render(results);
+//         }
+//     })
+// }
+router.get('/',(req,res)=>{
+    res.render('/');
+});
 //QUERY BARRA DE BUSQUEDA INDEX
 
 
@@ -64,8 +88,6 @@ router.get('/', f5_index.upgrade);
 //     res.render('index');
 // })
 
-
-router.post('/save', crud.save);
 
 // router.get('/correcto', (req,res,next) => {
 //     if(req.isAuthenticated()) return next();
