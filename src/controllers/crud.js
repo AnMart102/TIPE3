@@ -44,39 +44,39 @@ exports.save = (req, res)=>{
 //mostrar por consola que se obtienen los datos
     console.log(Correo +" - "+ Nombre +" - "+ ApellidoP +" - "+ ApellidoM +" - "+ Contrasena +" - "+ Telefono);
 //querys para insertar en la BD
-    conexion.query('INSERT INTO usuario SET ?', {Rut:Rut, Nombre:Nombre, ApellidoP:ApellidoP, ApellidoM:ApellidoM, Correo:Correo, Contrasena:Contrasena, Telefono:Telefono}, (error,results)=>{
+    conn.query('INSERT INTO usuario SET ?', {Rut:Rut, Nombre:Nombre, ApellidoP:ApellidoP, ApellidoM:ApellidoM, Correo:Correo, Contrasena:Contrasena, Telefono:Telefono}, (error,results)=>{
     if(error){
         console.log(error);
     }else{
         res.redirect('/');
     }
     }) //FALTAN POR RELLENAR (https://www.youtube.com/watch?v=fLIwK292RPY&ab_channel=Inform%C3%A1ticaDP)
-    conexion.query('INSERT INTO formulario_solicitud SET ?', {Nombre_pyme:Nombre_pyme, Descripcion:Descripcion, RSH:RSH, Medio_pago:Medio_pago, Medio_entrega:Medio_entrega, Empresa_registrada:Empresa_registrada, Actividades_SII:Actividades_SII, Patente_permiso:Patente_permiso, R_sanitaria:R_sanitaria, Sitio_web:Sitio_web, Facebook:Facebook, Whatsapp:Whatsapp, Instagram:Instagram}, (error,results)=>{
-        if(error){
-            console.log(error);
-        }else{
-            res.redirect('/');
-        }
-    })
-    conexion.query('INSERT INTO direccion SET ?', {calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, (error,results)=>{
-        if(error){
-            console.log(error);
-        }else{
-            res.redirect('/');
-        }
-    })
-    conexion.query('INSERT INTO categorias SET ?', {Categoria:Categoria}, (error,results)=>{
-        if(error){
-            console.log(error);
-        }else{
-            res.redirect('/');
-        }
-    })
-    conexion.query('INSERT INTO subcat SET ?', {nombre_subcat:nombre_subcat}, (error,results)=>{
-        if(error){
-            console.log(error);
-        }else{
-            res.redirect('/');
-        }
-    })
+    // conexion.query('INSERT INTO formulario_solicitud SET ?', {Nombre_pyme:Nombre_pyme, Descripcion:Descripcion, RSH:RSH, Medio_pago:Medio_pago, Medio_entrega:Medio_entrega, Empresa_registrada:Empresa_registrada, Actividades_SII:Actividades_SII, Patente_permiso:Patente_permiso, R_sanitaria:R_sanitaria, Sitio_web:Sitio_web, Facebook:Facebook, Whatsapp:Whatsapp, Instagram:Instagram}, (error,results)=>{
+    //     if(error){
+    //         console.log(error);
+    //     }else{
+    //         res.redirect('/');
+    //     }
+    // })
+    // conexion.query('INSERT INTO direccion SET ?', {calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, (error,results)=>{
+    //     if(error){
+    //         console.log(error);
+    //     }else{
+    //         res.redirect('/');
+    //     }
+    // })
+    // conexion.query('INSERT INTO categorias SET ?', {Categoria:Categoria}, (error,results)=>{
+    //     if(error){
+    //         console.log(error);
+    //     }else{
+    //         res.redirect('/');
+    //     }
+    // })
+    // conexion.query('INSERT INTO subcat SET ?', {nombre_subcat:nombre_subcat}, (error,results)=>{
+    //     if(error){
+    //         console.log(error);
+    //     }else{
+    //         res.redirect('/');
+    //     }
+    // })
 }
