@@ -5,6 +5,8 @@ const { commit } = require('../database');
 const router = express.Router();
 const conn = require('../database');
 const crud = require('../controllers/crud.js');
+const f5_index= require('../controllers/f5_index.js');
+
 //QUERYS DEL INDEX
 //MOSTRAR PYMES INDEX
 //router.get('/', (req,res) => {
@@ -46,16 +48,24 @@ router.get('/registro',(req,res)=>{
 
 router.post('/save', crud.save);
 
+// router.get('/', (req, res)=>{
+//     conn.query('', (error, results)=>{
+//         if (error) {
+//             throw error;
+//         }else{
+//             res.send(results);
+//         }
+//     }
+// })
 
-const f5_index= require('./routes/f5_index');
-router.get('/upgrade', crud.upgrade)
+router.get('/', f5_index.upgrade);
 
-router.get('/',(req,res)=>{
-    res.render('index');
-})
+// router.get('/',(req,res)=>{
+//     res.render('index');
+// })
 
-const crud= require('./routes/crud');
-router.post('/save', crud.save)
+
+router.post('/save', crud.save);
 
 // router.get('/correcto', (req,res,next) => {
 //     if(req.isAuthenticated()) return next();
