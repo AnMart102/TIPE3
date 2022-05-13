@@ -1,0 +1,27 @@
+#nav-vertical{
+    background-color: beige;
+    width:90px;
+    height: 100%;
+    position:fixed;
+}
+#abrir-menu{
+
+    width: 100%;
+    height: 90px;
+    background-color: #3E3E3E;
+}
+#contenido{
+
+    background-color: white;
+    margin-left:90px;
+    width:1219px;
+    height: 900px;
+}
+
+#horizontal{
+    width:100%;
+    height: 90px;
+    background-color: white;
+    border-bottom: 1px solid #9E9E9E
+    ;
+}

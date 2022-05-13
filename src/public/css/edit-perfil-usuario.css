@@ -26,20 +26,27 @@
 }
 
 #opciones-menu{
-    padding-top:50px;
+    padding-top:20px;
     padding-left:30px;
     background-color: beige;
     height: 100%;
+    position:relative;
     
 }
 
-#opciones-menu a{
-    color:black;
+#opciones-menu .opcion{
     text-decoration:none;
     font-family: 'Roboto', sans-serif;
-    display:block;
     position:relative;
+    display:flex;
+    margin-top: 20px;
+
 }
+
+#opciones-menu .opcion h4{
+    margin-left:20px;
+}
+
 
 
 #contenido{
