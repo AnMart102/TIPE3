@@ -67,7 +67,7 @@ passport.deserializeUser(function(id,done){
 // rutas
 
 app.use(require('./routes/select.js'));
-// app.use(require('./routes/update.js'));
+// app.use(require('./controllers/crud.js'));
 // app.use(require('./routes/delete.js'));
 // app.use(require('./routes/alter.js'));
 // app.use(require('./routes/insert.js'));
@@ -76,10 +76,9 @@ app.use(require('./routes/login.js'));
 //SOLO USAR DROP AL FINAL O PRODUCIRA PROBLEMAS CON LA TABLA A ELIMINAR POR LOS DATOS
 
 //PARA EL CRUD crud.js y guardar los datos del formulario en un json
-app.use(express.urlencoded(extended:false));
-app.use(express.json());
 
 app.use(express.static(path.join(__dirname,'public')));
+// app.use(express.static(path.join(__dirname,'controllers')));
 
 app.listen(app.get('port'),()=> {
     console.log('Servidor en puerto' ,app.get('port'))

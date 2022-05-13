@@ -4,7 +4,7 @@ const passport = require('passport');
 const { commit } = require('../database');
 const router = express.Router();
 const conn = require('../database');
-
+const crud = require('../controllers/crud.js');
 //QUERYS DEL INDEX
 //MOSTRAR PYMES INDEX
 router.get('/', (req,res) => {
@@ -34,13 +34,16 @@ router.get('/', (req,res) => {
 router.get('/editarPerfilUsuario', (req,res) => {
     conn.query('Select DISTINCT Categoria FROM categorias as c where c.Categoria != NULL', (err,resp,campos) => {
         console.log(resp);
-        res.render('editarPerfilUsuario.ejs'{
+        res.render('editarPerfilUsuario.ejs',{
             datos: resp
         });
     });
 });
 
-
+router.get('/registro',(req,res)=>{
+        res.render('registro.ejs');
+});
+router.post('/save', crud.save);
 
 
 // router.get('/correcto', (req,res,next) => {
@@ -183,7 +186,7 @@ router.get('/editarPerfilUsuario', (req,res) => {
 //     });
 // });
 
-const crud = require('./routes/crud');
-router.post('/save', crud.save);
+
+
 
 module.exports = router;
