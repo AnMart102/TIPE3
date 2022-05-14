@@ -1,13 +1,7 @@
-#contenedor-pagina{
 
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
 
 #navbar{
     height: 80px;
-    border-bottom: 1px solid #9E9E9E;
 }
 
 
@@ -17,7 +11,6 @@
 
 #navbar .container-fluid .row .col-navbar{
     padding-top: 20px;
-    border-right: 1px solid #9E9E9E;
 }
 
 #navbar .container-fluid .row .col-navbar a{
@@ -40,14 +33,14 @@
 }
 
 #descripcion-pyme{
-    height: 540px;
+    height: 700px;
     width: 90%;
     margin:0 auto;
     display:flex;
 }
 
 #fotos-perfil{
-    height: 100%;
+    height: 80%;
     width: 50%;
     border: solid 2px rgb(197, 190, 190);
 }
@@ -100,7 +93,7 @@
     background-color: rgb(31, 66, 82);
     color:white;
     text-align:center;
-    margin-left: 30px;
+    margin-left: 10px;
 
 }
 
@@ -112,6 +105,7 @@
     margin: 0 auto;
     border-bottom: solid 1px rgb(122, 117, 117);
     display: flex;
+    
 }
 .dato{
     height: 100%;
@@ -124,4 +118,27 @@
     display: flex;
     margin: 0 auto;
 
+}
+#botones-redireccion{
+    height:50px;
+    width:100%;
+    display:flex;
+
+}
+.boton-redireccion,.boton-redireccion-pagina{
+    height: 40px;
+    width:150px;
+    background-color: rgb(67, 67, 68);
+    border: solid 1px rgb(67, 67, 68); 
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 7px;
+}
+.boton-redireccion-pagina{
+    margin-top: 20px;
+}
+
+.boton-redireccion a,.boton-redireccion-pagina a{
+    text-decoration: none;
+    color:white;
 }
