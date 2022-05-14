@@ -6,6 +6,7 @@ const router = express.Router();
 const conn = require('../database');
 const crud = require('../controllers/crud.js');
 const f5_index= require('../controllers/f5_index.js');
+const updatePerfilAdmin = require('../controllers/updatePerfilAdmin.js');
 const { Router } = require('express');
 
 //QUERYS DEL INDEX
@@ -28,7 +29,7 @@ const { Router } = require('express');
 //    });
 //});
 //QUERY FILTRADO POR CATEGORIA INDEX
-router.get('//:id_categoria', (req,res) => {
+router.get('index.ejs/:id_categoria', (req,res) => {
     const id_categoria = req.params.id_categoria;
     conn.query('SELECT Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud AS f JOIN categorias as c WHERE c.id_categoria = ? and f.id_categoria=c.id_categoria', [id_categoria], (error,results) => {
         if(error){
@@ -50,23 +51,13 @@ router.get('//:id_categoria', (req,res) => {
 //         }
 //     })
 // }
-router.get('/',(req,res)=>{
-    res.render('/');
-});
+// router.get('/',(req,res)=>{
+//     res.render('index.ejs');
+// });
 //QUERY BARRA DE BUSQUEDA INDEX
 
 
-
-//QUERYS Editar perfil usuario 
-//router.get('/editarPerfilUsuario', (req,res) => {
-//    conn.query('', (err,resp,campos) => {
-//        console.log(resp);
-//        res.render('editarPerfilUsuario.ejs',{
-//            datos: resp
-//        });
-//    });
-//});
-
+//RUTA PARA EL REGISTRO
 router.get('/registro',(req,res)=>{
         res.render('registro.ejs');
 });
@@ -83,10 +74,14 @@ router.get('/editarPerfilUsuario/:Rut', (req, res)=>{
         if(error){
             throw error;
         }else{
-            res.render('/editarPerfilUsuario', {admin:results[0]});
+            res.render('/editarPerfilUsuario.ejs', {admin:results[0]});
         }
     })
 })
+
+//RUTA PARA ACTUALIZAR EL EDITAR REGISTRO DEL ADMINISTRADOR
+router.post('/updateMiPerfilAdmin',updatePerfilAdmin.updateMiPerfilAdmin);
+
 // router.get('/', (req, res)=>{
 //     conn.query('', (error, results)=>{
 //         if (error) {
