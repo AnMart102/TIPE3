@@ -6,6 +6,7 @@ const router = express.Router();
 const conn = require('../database');
 const crud = require('../controllers/crud.js');
 const f5_index= require('../controllers/f5_index.js');
+const { Router } = require('express');
 
 //QUERYS DEL INDEX
 //MOSTRAR PYMES INDEX
@@ -70,8 +71,22 @@ router.get('/registro',(req,res)=>{
         res.render('registro.ejs');
 });
 
+//RUTA CRUD FORMULARIO DE INSCRIPCION
 router.post('/save', crud.save);
 
+
+
+//RUTA PARA MOSTRAR Editar perfil admin
+router.get('/editarPerfilUsuario/:Rut', (req, res)=>{
+    const Rut = req.params.Rut;
+    conn.query('SELECT Nombre,ApellidoP,ApellidoM,Correo,Telefono,calle,numero,CasaDepto,localidad,PoblaVilla FROM usuario AS u JOIN direccion as d WHERE Rut = ? AND u.id_direccion=d.id_direccion AND Rol = "Admin"', [id], (error, results)=>{
+        if(error){
+            throw error;
+        }else{
+            res.render('/editarPerfilUsuario', {admin:results[0]});
+        }
+    })
+})
 // router.get('/', (req, res)=>{
 //     conn.query('', (error, results)=>{
 //         if (error) {
@@ -82,7 +97,10 @@ router.post('/save', crud.save);
 //     }
 // })
 
+//RUTA MOSTRAR QUERYS INDEX 
 router.get('/', f5_index.upgrade);
+
+
 
 // router.get('/',(req,res)=>{
 //     res.render('index');
