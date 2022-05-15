@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.3.0-dev+20220512.d0c37da63d
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-05-2022 a las 23:40:26
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.5
+-- Tiempo de generación: 15-05-2022 a las 20:02:32
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,7 +53,7 @@ INSERT INTO `administrador` (`Rut`, `Nombre`, `ApellidoP`, `ApellidoM`, `Correo`
 CREATE TABLE `archivos` (
   `id_archivo` int(11) NOT NULL,
   `archivo` mediumblob NOT NULL,
-  `estado_archivo` enum('En espera','Aprobado','Denagado','Modificacion') NOT NULL DEFAULT 'En espera',
+  `estado_archivo` enum('En espera','Aprobado','Denagado','Modificacion') NOT NULL,
   `id_formulario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -64,20 +64,10 @@ CREATE TABLE `archivos` (
 --
 
 CREATE TABLE `categorias` (
-  `id_categoria` int(11) NOT NULL,
-  `Categoria` enum('Artesania','Comida','Ropa y Accesorios','Decoracion','Muebleria') DEFAULT NULL
+  `id_categorias` int(11) NOT NULL,
+  `categorias` enum('Artesania','Comida','Ropa y Accesorios','Decoracion','Muebleria') NOT NULL,
+  `id_formulario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `categorias`
---
-
-INSERT INTO `categorias` (`id_categoria`, `Categoria`) VALUES
-(1, 'Comida'),
-(2, 'Ropa y Accesorios'),
-(3, 'Decoracion'),
-(4, 'Artesania'),
-(5, 'Muebleria');
 
 -- --------------------------------------------------------
 
@@ -125,20 +115,17 @@ CREATE TABLE `formulario_solicitud` (
   `Instagram` varchar(100) DEFAULT NULL,
   `Comentario_admin` varchar(1000) DEFAULT NULL,
   `Rut` varchar(12) NOT NULL,
-  `id_formulario` int(11) NOT NULL,
-  `id_categoria` int(11) NOT NULL,
-  `id_subcat` int(11) DEFAULT NULL,
-  `id_archivo` int(11) NOT NULL
+  `id_formulario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `formulario_solicitud`
 --
 
-INSERT INTO `formulario_solicitud` (`Nombre_pyme`, `Descripcion`, `RSH`, `Medio_pago`, `Medio_entrega`, `Empresa_registrada`, `Actividades_SII`, `Patente_permiso`, `R_sanitaria`, `estado_sol`, `Sitio_web`, `Facebook`, `Whatsapp`, `Instagram`, `Comentario_admin`, `Rut`, `id_formulario`, `id_categoria`, `id_subcat`, `id_archivo`) VALUES
-('RopasLindas', 'Ropa linda', NULL, 'Efectivo', NULL, 'Si', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, '10243567-9', 1, 2, NULL, 0),
-('DecoHogarCartagena', 'Tecnologia ventaaaas', NULL, '', NULL, 'No', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, '13452388-6', 2, 3, NULL, 0),
-('MiArte', 'Arte', NULL, 'Efectivo', 'Delivery', 'Si', NULL, NULL, NULL, 'En espera', NULL, NULL, NULL, NULL, NULL, '10102312-9', 3, 4, 0, 0);
+INSERT INTO `formulario_solicitud` (`Nombre_pyme`, `Descripcion`, `RSH`, `Medio_pago`, `Medio_entrega`, `Empresa_registrada`, `Actividades_SII`, `Patente_permiso`, `R_sanitaria`, `estado_sol`, `Sitio_web`, `Facebook`, `Whatsapp`, `Instagram`, `Comentario_admin`, `Rut`, `id_formulario`) VALUES
+('RopasLindas', 'Ropa linda', NULL, 'Efectivo', NULL, 'Si', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, '10243567-9', 1),
+('DecoHogarCartagena', 'Tecnologia ventaaaas', NULL, '', NULL, 'No', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, '13452388-6', 2),
+('MiArte', 'Arte', NULL, 'Efectivo', 'Delivery', 'Si', NULL, NULL, NULL, 'En espera', NULL, NULL, NULL, NULL, NULL, '10102312-9', 3);
 
 -- --------------------------------------------------------
 
@@ -148,17 +135,10 @@ INSERT INTO `formulario_solicitud` (`Nombre_pyme`, `Descripcion`, `RSH`, `Medio_
 
 CREATE TABLE `subcat` (
   `id_subcat` int(11) NOT NULL,
-  `nombre_subcat` text NOT NULL,
-  `estado_subcat` enum('En espera','Aprobado','Denegado','Modificacion') NOT NULL DEFAULT 'En espera',
-  `id_categoria` int(11) NOT NULL
+  `sub_cat` text NOT NULL,
+  `Estado_subcat` enum('En espera','Aprobado','Denegado','Modificacion') NOT NULL,
+  `id_categorias` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `subcat`
---
-
-INSERT INTO `subcat` (`id_subcat`, `nombre_subcat`, `estado_subcat`, `id_categoria`) VALUES
-(1, 'Pinturas', 'Aprobado', 4);
 
 -- --------------------------------------------------------
 
@@ -202,13 +182,15 @@ ALTER TABLE `administrador`
 -- Indices de la tabla `archivos`
 --
 ALTER TABLE `archivos`
-  ADD PRIMARY KEY (`id_archivo`);
+  ADD PRIMARY KEY (`id_archivo`),
+  ADD KEY `id_formulario` (`id_formulario`);
 
 --
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id_categoria`);
+  ADD PRIMARY KEY (`id_categorias`),
+  ADD KEY `id_formulario` (`id_formulario`);
 
 --
 -- Indices de la tabla `direccion`
@@ -227,7 +209,8 @@ ALTER TABLE `formulario_solicitud`
 -- Indices de la tabla `subcat`
 --
 ALTER TABLE `subcat`
-  ADD PRIMARY KEY (`id_subcat`);
+  ADD PRIMARY KEY (`id_subcat`),
+  ADD KEY `id_categorias` (`id_categorias`);
 
 --
 -- Indices de la tabla `usuario`
@@ -246,6 +229,12 @@ ALTER TABLE `archivos`
   MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `id_categorias` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `direccion`
 --
 ALTER TABLE `direccion`
@@ -261,28 +250,31 @@ ALTER TABLE `formulario_solicitud`
 -- AUTO_INCREMENT de la tabla `subcat`
 --
 ALTER TABLE `subcat`
-  MODIFY `id_subcat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_subcat` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
+-- Filtros para la tabla `archivos`
+--
+ALTER TABLE `archivos`
+  ADD CONSTRAINT `archivos_ibfk_1` FOREIGN KEY (`id_formulario`) REFERENCES `formulario_solicitud` (`id_formulario`);
+
+--
 -- Filtros para la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  ADD CONSTRAINT `categorias_ibfk_1` FOREIGN KEY (`Rut`) REFERENCES `usuario` (`Rut`) ON DELETE CASCADE;
+  ADD CONSTRAINT `categorias_ibfk_1` FOREIGN KEY (`id_formulario`) REFERENCES `formulario_solicitud` (`id_formulario`);
 
 --
--- Filtros para la tabla `formulario_solicitud`
+-- Filtros para la tabla `subcat`
 --
-ALTER TABLE `formulario_solicitud`
-  ADD CONSTRAINT `formulario_solicitud_ibfk_1` FOREIGN KEY (`Rut`) REFERENCES `usuario` (`Rut`) ON DELETE CASCADE;
+ALTER TABLE `subcat`
+  ADD CONSTRAINT `subcat_ibfk_1` FOREIGN KEY (`id_categorias`) REFERENCES `categorias` (`id_categorias`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
