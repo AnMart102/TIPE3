@@ -52,25 +52,23 @@
 
           <!-- <h2>Categorías de emprendimientos</h2>
           <p>busque la categoría de su emprendimiento</p> -->
-        <% for(var i = 0; i < datos2.length; i++){ %>
+        
         <div class="row rowCategorias">
-          <div class="col-1 categoria"></div>
+          <% for(var i = 0; i < datos2.length; i++){ %>
+          <div class="col-1"><a href="#"><div class="categoria"></div></a><p><%= datos2[i].categorias %></p></div>
+          <% } %>
         </div>
 
-        <div class="row">
-          <div class="col-1 category">
-            <h5><%= datos2[i].categorias %></h5>
-          </div>
-          </div>
         </div>
+        
       </div>
-      <% } %>
+      
       <div id="emprendimientos-locales">
         <h2>Emprendimientos locales</h2>
         <% for(var i = 0; i < datos1.length; i++){ %>
         <div class="row">
           <div class="col-1 col-emprendimientos-locales">
-            <img src="../img/usuario.png" height="80px" width="80px">
+            <img src="../views/img/usuario.png" height="80px" width="80px">
           </div>
           <div class="col-2 col-emprendimientos-locales">
             <a href="/registro"><%= datos1[i].Nombre_pyme %></a>
