@@ -84,28 +84,24 @@
 
     text-align: center;
     font-family: sans-serif;
-
-    height: 450px;
     padding-top: 50px;
 
 }
 
-#categorias p{
-    font-size: 20px;
-    margin-top:30px;
-    margin-bottom: 50px;
+.rowCategorias{
+    height: 200px;
 }
-
-#categorias .rowCategorias{
-    height: 150px;
+.rowCategorias .col-1{
+    margin-left: 100px;
 }
-
-#categorias .rowCategorias .categoria{
+.rowCategorias .col-1 p{
+    margin-left: 25px;
+}
+.categoria{
     border: 1px solid #9E9E9E;
     background-color: white;
-    margin-left: 150px;
-    position:relative;
-    left:70px;
+    height: 150px;
+    width:120px;
 }
 
 #categorias .row .category{
