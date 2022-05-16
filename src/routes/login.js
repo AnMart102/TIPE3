@@ -16,11 +16,20 @@ router.post('/login',passport.authenticate('local',{
 }));
 
 router.get('/correcto', (req,res,next)=>{
-    if(req.isAuthenticated()) return next();   
+    if(req.isAuthenticated()) return next();
+    
     res.redirect('/login');
 },(req,res) =>{
-    res.render('admin.ejs');
-    console.log("xdxd");
+    
+    let op = require("../index.js")
+    let tipo_usuario = op.rol1;
+    if(tipo_usuario==="Admin"){
+        res.redirect('/registro');
+    }else if(tipo_usuario==="User"){
+        res.redirect('/');
+    }   
 });
+
+
 
 module.exports = router;

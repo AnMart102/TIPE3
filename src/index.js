@@ -29,25 +29,27 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new PassportLocal(function(username,password,done){
-    conn.query('select * From administrador Where Rut=? and Contrasena=?',[username,password],(err,resp,campos)=>{
-    try{ 
-        var user;
-        var pass;
-
-        if(resp==null){
-            user="xdxd";
-            pass="xdxd";
-        }
-        else{
-            console.log(resp[0]);
-            user = resp[0].Rut;
-            pass = resp[0].Contrasena;
-        }
-
-    if(username === user && password === pass){
-        console.log(resp);
-     return done(null,{id:resp[0].Nombre, name: resp[0].Nombre});
-    }
+    conn.query('Select * from usuario where Rut = ? and Contrasena = ?', [username, password], (err,resp,campos) =>{
+        try{
+             var user;
+             var pass;
+             var rol;
+              if(resp===null){
+                   user= "asd";
+                   pass ="asd";
+              }else{
+                   user = resp[0].Rut;
+                   pass = resp[0].Contrasena;
+                   rol  = resp[0].Rol;
+                   module.exports = {
+                        rol1: rol,
+                   }
+              }
+          if(username === user && password ===pass){
+               console.log("entre aqui")
+               return done(null,{id:resp[0].Rut, name: resp[0].Nombre});
+              
+          }
 }catch(e){
     done(null,false);
 }})
