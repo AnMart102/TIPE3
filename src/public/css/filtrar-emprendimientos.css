@@ -1,0 +1,109 @@
+#contenedor-pagina{
+
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#navbar{
+    background-color: beige;
+    height: 80px;
+
+}
+
+#navbar .container-fluid{
+    background-color: beige;
+        
+}
+
+#navbar .container-fluid .row {
+    height: 70px;
+}
+
+#navbar .container-fluid .row .col-navbar{
+    padding-top: 20px;
+    border-right: 1px solid #9E9E9E;
+}
+
+#navbar .container-fluid .row .col-navbar a{
+    color:black;
+}
+
+#iniciar-sesion-buttom{
+
+    background-color: black;
+    border: 1px solid beige;
+
+    font-weight: 400;
+    text-align: center;
+    width:150px;
+    height: 30px;
+}
+
+#navbar .container-fluid .row .col-navbar #iniciar-sesion-buttom a{
+    color:beige;
+}
+
+#descripcion-pyme{
+    height: 540px;
+    width: 90%;
+    margin:0 auto;
+    display:flex;
+}
+
+#fotos-perfil{
+    height: 100%;
+    width: 50%;
+    border: solid 2px rgb(197, 190, 190);
+}
+
+#imagen-principal{
+
+    height: 70%;
+    background-color: beige;
+}
+#imagenes-secundarias{
+    height: 30%;
+    width: 100%;
+    display:flex;
+    background-color: beige;
+}
+.imagen-secundaria{
+
+    height: 100%;
+    width: 25%;
+    background-color: beige;
+    border: solid 3px white;
+}
+
+
+#descripcion-perfil{
+    height: 100%;
+    width: 50%;
+    background-color: green;
+}
+
+#nombre-emprendimiento{
+    height: 60px;
+    width: 100%;
+    background-color: red;
+    text-align:center;
+    padding-top: 20px;
+}
+#categorias-emprendimiento{
+    height: 60px;
+    width: 100%;
+    background-color: blue;
+    text-align:center;
+    padding-top: 20px;
+    margin:0 auto;
+}
+
+.categoria{
+    height: 20px;
+    width: 50px;
+    background-color: red;
+    text-align:center;
+
+}
+
