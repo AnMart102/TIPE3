@@ -114,8 +114,38 @@
     border: solid 1px black;
     cursor:pointer;
 }
+#valores-visitas-pymes{
+    height: 200px;
+    width:70%;
+    margin:0 auto;
+    display: flex;
+    padding-top: 30px;
+}
+.nuevas{
+    height: 90px;
+    width: 340px;
+    border:2px solid rgb(173, 173, 173);
+    margin: 0 auto;
+    padding-left: 30px;
+}
+
+#grafico-visitas{
+    height:400px;
+    width: 60%;
+    border:2px solid rgb(173, 173, 173);
+    margin:0 auto;
+
+}
+#descripcion-total-de-pymes{
+    height: 70px;
+    width:40%;
+    border-bottom:2px solid rgb(173, 173, 173);
+    padding-top:20px;
+    padding-left:20px;
+}
 
 /*javascript*/
 .nav_side{
-    width:180px;
+    width:180px;   
+
 }
