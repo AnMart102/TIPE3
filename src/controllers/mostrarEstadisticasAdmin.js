@@ -11,7 +11,7 @@ exports.mostrarEstAdmin = (req, res)=>{
         }else{
             datos3=results;
             console.log(datos3);
-            res.render("index.ejs");//poner el n0ombre del archivo que creo el andres
+            res.render("index.ejs"); //poner el n0ombre del archivo que creo el andres
         }
     })
 }   

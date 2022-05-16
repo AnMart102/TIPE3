@@ -53,14 +53,15 @@ exports.save = (req, res)=>{
     }else{
         res.redirect('/');
     }
-    }) //FALTAN POR RELLENAR (https://www.youtube.com/watch?v=fLIwK292RPY&ab_channel=Inform%C3%A1ticaDP)
-    // conn.query('INSERT INTO formulario_solicitud SET ?', {Nombre_pyme:Nombre_pyme, Descripcion:Descripcion, RSH:RSH, Medio_pago:Medio_pago, Medio_entrega:Medio_entrega, Horario:Horario, tipoTienda:tipoTienda, Empresa_registrada:Empresa_registrada, Actividades_SII:Actividades_SII, Patente_permiso:Patente_permiso, R_sanitaria:R_sanitaria, Sitio_web:Sitio_web, Facebook:Facebook, Whatsapp:Whatsapp, Instagram:Instagram}, (error,results)=>{
+    }) 
+    // conn.query('INSERT INTO formulario_solicitud SET ?', {Rut:Rut, Nombre_pyme:Nombre_pyme, Descripcion:Descripcion, RSH:RSH, Medio_pago:Medio_pago, Medio_entrega:Medio_entrega, Horario:Horario, tipoTienda:tipoTienda, Empresa_registrada:Empresa_registrada, Actividades_SII:Actividades_SII, Patente_permiso:Patente_permiso, R_sanitaria:R_sanitaria, Sitio_web:Sitio_web, Facebook:Facebook, Whatsapp:Whatsapp, Instagram:Instagram}, (error,results)=>{
     //     if(error){
     //         console.log(error);
     //     }else{
     //         res.redirect('/');
     //     }
     // })
+// IMPORTANTE PREOCUPARSE DE HACER UN SELECT ANTES DEL INSERT DE LA TABLA DIRECCION PQ SE DEBE RECUPERAR EL ID DEL FORMULARIO PARA LA SIGUIENTE TABLA
     // conn.query('INSERT INTO direccion SET ?', {calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, (error,results)=>{
     //     if(error){
     //         console.log(error);
