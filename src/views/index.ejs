@@ -52,19 +52,17 @@
 
           <!-- <h2>Categorías de emprendimientos</h2>
           <p>busque la categoría de su emprendimiento</p> -->
-        <% for(var i = 0; i < datos2.length; i++){ %>
+        
         <div class="row rowCategorias">
-          <div class="col-1 categoria"></div>
+          <% for(var i = 0; i < datos2.length; i++){ %>
+          <div class="col-1 categoria"><%= datos2[i].categorias %></div>
+          <% } %>
         </div>
 
-        <div class="row">
-          <div class="col-1 category">
-            <h5><%= datos2[i].categorias %></h5>
-          </div>
-          </div>
         </div>
+        
       </div>
-      <% } %>
+      
       <div id="emprendimientos-locales">
         <h2>Emprendimientos locales</h2>
         <% for(var i = 0; i < datos1.length; i++){ %>
