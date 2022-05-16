@@ -7,6 +7,8 @@ const conn = require('../database');
 const crud = require('../controllers/crud.js');
 const f5_index= require('../controllers/f5_index.js');
 const updatePerfilAdmin = require('../controllers/updatePerfilAdmin.js');
+const modificarPyme = require('../controllers/modificarPyme.js');
+const mostrarEstadisticasAdmin = require('../controllers/mostrarEstadisticasAdmin.js');
 const { Router } = require('express');
 
 //QUERYS DEL INDEX
@@ -29,7 +31,7 @@ const { Router } = require('express');
 //    });
 //});
 //QUERY FILTRADO POR CATEGORIA INDEX
-router.get('index.ejs/:id_categoria', (req,res) => {
+router.get('/:id_categoria', (req,res) => {
     const id_categoria = req.params.id_categoria;
     conn.query('SELECT Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud AS f JOIN categorias as c WHERE c.id_categoria = ? and f.id_categoria=c.id_categoria', [id_categoria], (error,results) => {
         if(error){
@@ -37,8 +39,8 @@ router.get('index.ejs/:id_categoria', (req,res) => {
         }else{
             res.render('/', {categoria:results[0]});
         }
-   });
-});
+   })
+})
 //CON LO ANTERIOR DEBERIA BASTAR, SI FALTA ALGO ES LO QUE ESTA ABAJO, PARA ACTUALIZAR LA PAGINA
 // exports.actualizarCategorias = (req, res)=>{
 //     const id_categoria = req.body.id_categoria;
@@ -56,7 +58,6 @@ router.get('index.ejs/:id_categoria', (req,res) => {
 // });
 //QUERY BARRA DE BUSQUEDA INDEX
 
-
 //RUTA PARA EL REGISTRO
 router.get('/registro',(req,res)=>{
         res.render('registro.ejs');
@@ -65,16 +66,42 @@ router.get('/registro',(req,res)=>{
 //RUTA CRUD FORMULARIO DE INSCRIPCION
 router.post('/save', crud.save);
 
+//RUTA PARA MOSTRAR Editar perfil usuario
+router.get('/POR PONER /:Rut', (req, res)=>{//poner el nombre que creee el andres de la vista
+    const Rut = req.params.Rut;
+    conn.query('SELECT Nombre,ApellidoP,ApellidoM,Correo,Telefono,calle,numero,CasaDepto,localidad,PoblaVilla,estado_sol,Comentario_admin FROM usuario AS u JOIN direccion as d JOIN formulario_solicitud as f WHERE u.Rut = ? AND u.Rut=f.Rut AND u.id_direccion=d.id_direccion AND Rol = "User"', [Rut], (error, results)=>{
+        if(error){
+            throw error;
+        }else{
+            res.render('/POR PONER.ejs', {usuario:results[0]});//poner el nombre que creee el andres de la vista
+        }
+    })
+})
+
+//RUTA modificarPyme
+router.post('/guardar', modificarPyme.guardar);
 
 
 //RUTA PARA MOSTRAR Editar perfil admin
 router.get('/editarPerfilUsuario/:Rut', (req, res)=>{
     const Rut = req.params.Rut;
-    conn.query('SELECT Nombre,ApellidoP,ApellidoM,Correo,Telefono,calle,numero,CasaDepto,localidad,PoblaVilla FROM usuario AS u JOIN direccion as d WHERE Rut = ? AND u.id_direccion=d.id_direccion AND Rol = "Admin"', [id], (error, results)=>{
+    conn.query('SELECT Nombre,ApellidoP,ApellidoM,Correo,Telefono,calle,numero,CasaDepto,localidad,PoblaVilla FROM usuario AS u JOIN direccion as d WHERE Rut = ? AND u.id_direccion=d.id_direccion AND Rol = "Admin"', [Rut], (error, results)=>{
         if(error){
             throw error;
         }else{
             res.render('/editarPerfilUsuario.ejs', {admin:results[0]});
+        }
+    })
+})
+
+//RUTA PARA MOSTRAR vitrina pyme
+router.get('/MOSTRARVITRINAPYME/:Rut', (req, res)=>{//poner el nombre que el andres le puso
+    const Rut = req.params.Rut;
+    conn.query('', [Rut], (error, results)=>{
+        if(error){
+            throw error;
+        }else{
+            res.render('/MOSTRARVITRINAPYME.ejs', {admin:results[0]});
         }
     })
 })
@@ -95,7 +122,8 @@ router.post('/updateMiPerfilAdmin',updatePerfilAdmin.updateMiPerfilAdmin);
 //RUTA MOSTRAR QUERYS INDEX 
 router.get('/', f5_index.upgrade);
 
-
+//RUTA MOSTRAR ESTADISTICAS DEL ADMIN 
+router.get('/editarPerfilAdmin', mostrarEstadisticasAdmin.mostrarEstAdmin);//ponerle el nombre del archivo de la vista de estadisticas admin que el andres creo
 
 // router.get('/',(req,res)=>{
 //     res.render('index');

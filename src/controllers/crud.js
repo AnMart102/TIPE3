@@ -21,6 +21,8 @@ exports.save = (req, res)=>{
     const RSH = req.body.RSH;
     const Medio_pago = req.body.Medio_pago;
     const Medio_entrega = req.body.Medio_entrega;
+    const Horario = req.body.Horario;
+    const tipoTienda = req.body.tipoTienda;
     const Empresa_registrada = req.body.Empresa_registrada;
     const Actividades_SII = req.body.Actividades_SII;
     const Patente_permiso = req.body.Patente_permiso;
@@ -39,7 +41,8 @@ exports.save = (req, res)=>{
     const Categoria = req.body.Categoria;
 //subcat
     const nombre_subcat = req.body.nombre_subcat;
-
+//archivos
+    const archivo = req.body.archivo;
 
 //mostrar por consola que se obtienen los datos
     console.log(Correo +" - "+ Nombre +" - "+ ApellidoP +" - "+ ApellidoM +" - "+ Contrasena +" - "+ Telefono);
@@ -51,32 +54,40 @@ exports.save = (req, res)=>{
         res.redirect('/');
     }
     }) //FALTAN POR RELLENAR (https://www.youtube.com/watch?v=fLIwK292RPY&ab_channel=Inform%C3%A1ticaDP)
-    // conexion.query('INSERT INTO formulario_solicitud SET ?', {Nombre_pyme:Nombre_pyme, Descripcion:Descripcion, RSH:RSH, Medio_pago:Medio_pago, Medio_entrega:Medio_entrega, Empresa_registrada:Empresa_registrada, Actividades_SII:Actividades_SII, Patente_permiso:Patente_permiso, R_sanitaria:R_sanitaria, Sitio_web:Sitio_web, Facebook:Facebook, Whatsapp:Whatsapp, Instagram:Instagram}, (error,results)=>{
+    // conn.query('INSERT INTO formulario_solicitud SET ?', {Nombre_pyme:Nombre_pyme, Descripcion:Descripcion, RSH:RSH, Medio_pago:Medio_pago, Medio_entrega:Medio_entrega, Horario:Horario, tipoTienda:tipoTienda, Empresa_registrada:Empresa_registrada, Actividades_SII:Actividades_SII, Patente_permiso:Patente_permiso, R_sanitaria:R_sanitaria, Sitio_web:Sitio_web, Facebook:Facebook, Whatsapp:Whatsapp, Instagram:Instagram}, (error,results)=>{
     //     if(error){
     //         console.log(error);
     //     }else{
     //         res.redirect('/');
     //     }
     // })
-    // conexion.query('INSERT INTO direccion SET ?', {calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, (error,results)=>{
+    // conn.query('INSERT INTO direccion SET ?', {calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, (error,results)=>{
     //     if(error){
     //         console.log(error);
     //     }else{
     //         res.redirect('/');
     //     }
     // })
-    // conexion.query('INSERT INTO categorias SET ?', {Categoria:Categoria}, (error,results)=>{
+    // conn.query('INSERT INTO categorias SET ?', {Categoria:Categoria}, (error,results)=>{
     //     if(error){
     //         console.log(error);
     //     }else{
     //         res.redirect('/');
     //     }
     // })
-    // conexion.query('INSERT INTO subcat SET ?', {nombre_subcat:nombre_subcat}, (error,results)=>{
+    // conn.query('INSERT INTO subcat SET ?', {nombre_subcat:nombre_subcat}, (error,results)=>{
     //     if(error){
     //         console.log(error);
     //     }else{
     //         res.redirect('/');
+    //     }
+    // })
+    //ver como se sabe que el archivo que estoy poniendo corresponde o esta ligado a mi pyme lo mismo con las demas de arriba!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // conn.query('INSERT INTO archivos SET ?', {archivo:archivo}, (error,results)=>{
+    //     if(error){
+    //     console.log(error);
+    // }else{
+    //     res.redirect('/');
     //     }
     // })
 }
