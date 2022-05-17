@@ -6,7 +6,7 @@ const conn = require('../database');
 
 exports.upgrade = (req, res)=>{
     
-    conn.query('SELECT Nombre_pyme,Descripcion FROM formulario_solicitud ', (error,results) =>{
+    conn.query('SELECT Nombre_pyme,Descripcion,id_formulario FROM formulario_solicitud ', (error,results) =>{
         if(error){
             throw error;
         }else{

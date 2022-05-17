@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-05-2022 a las 20:02:32
+-- Tiempo de generación: 17-05-2022 a las 08:29:27
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -57,6 +57,13 @@ CREATE TABLE `archivos` (
   `id_formulario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `archivos`
+--
+
+INSERT INTO `archivos` (`id_archivo`, `archivo`, `estado_archivo`, `id_formulario`) VALUES
+(1, 0x686f6c612e706466, 'En espera', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -69,6 +76,15 @@ CREATE TABLE `categorias` (
   `id_formulario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id_categorias`, `categorias`, `id_formulario`) VALUES
+(1, 'Ropa y Accesorios', 1),
+(2, 'Decoracion', 2),
+(3, 'Artesania', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -76,21 +92,20 @@ CREATE TABLE `categorias` (
 --
 
 CREATE TABLE `direccion` (
-  `id_direccion` int(11) NOT NULL,
+  `Rut` varchar(10) NOT NULL,
   `calle` text NOT NULL,
-  `numero` int(11) NOT NULL,
-  `CasaDepto` enum('Casa','Departamento','','') DEFAULT NULL,
+  `numero` int(5) NOT NULL,
+  `CasaDepto` enum('casa','depto') NOT NULL,
   `localidad` text NOT NULL,
-  `PoblaVilla` text DEFAULT NULL
+  `PoblaVilla` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `direccion`
 --
 
-INSERT INTO `direccion` (`id_direccion`, `calle`, `numero`, `CasaDepto`, `localidad`, `PoblaVilla`) VALUES
-(1, 'rosas', 111, 'Casa', 'cartagena', NULL),
-(2, 'trece norte', 210, 'Casa', 'Cartagena', 'Villa');
+INSERT INTO `direccion` (`Rut`, `calle`, `numero`, `CasaDepto`, `localidad`, `PoblaVilla`) VALUES
+('10243567-9', 'aguagua', 12, 'casa', 'santiago', 'Pobla choro');
 
 -- --------------------------------------------------------
 
@@ -99,11 +114,13 @@ INSERT INTO `direccion` (`id_direccion`, `calle`, `numero`, `CasaDepto`, `locali
 --
 
 CREATE TABLE `formulario_solicitud` (
+  `id_formulario` int(11) NOT NULL,
   `Nombre_pyme` varchar(100) NOT NULL,
   `Descripcion` varchar(1000) NOT NULL,
   `RSH` varchar(100) DEFAULT NULL,
   `Medio_pago` text NOT NULL,
   `Medio_entrega` enum('Delivery','Retiro en tienda') DEFAULT NULL,
+  `Horario` text NOT NULL,
   `Empresa_registrada` enum('Si','No') NOT NULL,
   `Actividades_SII` varchar(100) DEFAULT NULL,
   `Patente_permiso` varchar(100) DEFAULT NULL,
@@ -114,18 +131,18 @@ CREATE TABLE `formulario_solicitud` (
   `Whatsapp` varchar(100) DEFAULT NULL,
   `Instagram` varchar(100) DEFAULT NULL,
   `Comentario_admin` varchar(1000) DEFAULT NULL,
-  `Rut` varchar(12) NOT NULL,
-  `id_formulario` int(11) NOT NULL
+  `tipoTienda` enum('Tienda Fisica','Tienda Virtual','Tienda Virtual y Fisica') NOT NULL,
+  `Rut` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `formulario_solicitud`
 --
 
-INSERT INTO `formulario_solicitud` (`Nombre_pyme`, `Descripcion`, `RSH`, `Medio_pago`, `Medio_entrega`, `Empresa_registrada`, `Actividades_SII`, `Patente_permiso`, `R_sanitaria`, `estado_sol`, `Sitio_web`, `Facebook`, `Whatsapp`, `Instagram`, `Comentario_admin`, `Rut`, `id_formulario`) VALUES
-('RopasLindas', 'Ropa linda', NULL, 'Efectivo', NULL, 'Si', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, '10243567-9', 1),
-('DecoHogarCartagena', 'Tecnologia ventaaaas', NULL, '', NULL, 'No', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, '13452388-6', 2),
-('MiArte', 'Arte', NULL, 'Efectivo', 'Delivery', 'Si', NULL, NULL, NULL, 'En espera', NULL, NULL, NULL, NULL, NULL, '10102312-9', 3);
+INSERT INTO `formulario_solicitud` (`id_formulario`, `Nombre_pyme`, `Descripcion`, `RSH`, `Medio_pago`, `Medio_entrega`, `Horario`, `Empresa_registrada`, `Actividades_SII`, `Patente_permiso`, `R_sanitaria`, `estado_sol`, `Sitio_web`, `Facebook`, `Whatsapp`, `Instagram`, `Comentario_admin`, `tipoTienda`, `Rut`) VALUES
+(1, 'RopasLindas', 'Ropa linda', NULL, 'Efectivo', NULL, '', 'Si', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, 'Tienda Fisica', '10243567-9'),
+(2, 'DecoHogarCartagena', 'Tecnologia ventaaaas', NULL, '', NULL, '', 'No', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, 'Tienda Fisica', '13452388-6'),
+(3, 'MiArte', 'Arte', NULL, 'Efectivo', 'Delivery', '', 'Si', NULL, NULL, NULL, 'En espera', NULL, NULL, NULL, NULL, NULL, 'Tienda Fisica', '10102312-9');
 
 -- --------------------------------------------------------
 
@@ -139,6 +156,13 @@ CREATE TABLE `subcat` (
   `Estado_subcat` enum('En espera','Aprobado','Denegado','Modificacion') NOT NULL,
   `id_categorias` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `subcat`
+--
+
+INSERT INTO `subcat` (`id_subcat`, `sub_cat`, `Estado_subcat`, `id_categorias`) VALUES
+(1, 'macarena', 'En espera', 1);
 
 -- --------------------------------------------------------
 
@@ -154,7 +178,6 @@ CREATE TABLE `usuario` (
   `Correo` varchar(100) NOT NULL,
   `Contrasena` varchar(16) NOT NULL,
   `Telefono` varchar(13) NOT NULL,
-  `id_direccion` int(11) NOT NULL,
   `Rol` text NOT NULL DEFAULT 'User'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -162,11 +185,11 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Rut`, `Nombre`, `ApellidoP`, `ApellidoM`, `Correo`, `Contrasena`, `Telefono`, `id_direccion`, `Rol`) VALUES
-('10102312-9', 'Jose', 'Loyola', 'Hidalgo', 'jlh@gmail.com', '1313', '912121222', 1, 'User'),
-('10232134-5', 'Facundo', 'Martinez', 'Gulle', 'facundo.martinez@alumnos.uv.cl', '1010', '967691027', 2, 'Admin'),
-('10243567-9', 'Luis ', 'Prat', 'Rojas', 'ehdicwbcehuwb@hotmail.com', '12345', '987654321', 0, 'User'),
-('13452388-6', 'Juan', 'Perez', 'Perez', 'perezperez1@gmail.com', '123458', '987654329', 0, 'User');
+INSERT INTO `usuario` (`Rut`, `Nombre`, `ApellidoP`, `ApellidoM`, `Correo`, `Contrasena`, `Telefono`, `Rol`) VALUES
+('10102312-9', 'Jose', 'Loyola', 'Hidalgo', 'jlh@gmail.com', '1313', '912121222', 'User'),
+('10232134-5', 'Facundo', 'Martinez', 'Gulle', 'facundo.martinez@alumnos.uv.cl', '1010', '967691027', 'Admin'),
+('10243567-9', 'Luis ', 'Prat', 'Rojas', 'ehdicwbcehuwb@hotmail.com', '12345', '987654321', 'User'),
+('13452388-6', 'Juan', 'Perez', 'Perez', 'perezperez1@gmail.com', '123458', '987654329', 'User');
 
 --
 -- Índices para tablas volcadas
@@ -196,7 +219,7 @@ ALTER TABLE `categorias`
 -- Indices de la tabla `direccion`
 --
 ALTER TABLE `direccion`
-  ADD PRIMARY KEY (`id_direccion`);
+  ADD KEY `Rut` (`Rut`);
 
 --
 -- Indices de la tabla `formulario_solicitud`
@@ -226,19 +249,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `archivos`
 --
 ALTER TABLE `archivos`
-  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categorias` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `direccion`
---
-ALTER TABLE `direccion`
-  MODIFY `id_direccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_categorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `formulario_solicitud`
@@ -250,7 +267,7 @@ ALTER TABLE `formulario_solicitud`
 -- AUTO_INCREMENT de la tabla `subcat`
 --
 ALTER TABLE `subcat`
-  MODIFY `id_subcat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_subcat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -267,6 +284,12 @@ ALTER TABLE `archivos`
 --
 ALTER TABLE `categorias`
   ADD CONSTRAINT `categorias_ibfk_1` FOREIGN KEY (`id_formulario`) REFERENCES `formulario_solicitud` (`id_formulario`);
+
+--
+-- Filtros para la tabla `direccion`
+--
+ALTER TABLE `direccion`
+  ADD CONSTRAINT `direccion_ibfk_1` FOREIGN KEY (`Rut`) REFERENCES `usuario` (`Rut`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `subcat`
