@@ -47,6 +47,15 @@ exports.save = (req, res)=>{
 
 //mostrar por consola que se obtienen los datos
     console.log(Correo +" - "+ Nombre +" - "+ ApellidoP +" - "+ ApellidoM +" - "+ Contrasena +" - "+ Telefono);
+
+// IMPORTANTE PREOCUPARSE DE HACER UN SELECT ANTES DEL INSERT DE LA TABLA DIRECCION PQ SE DEBE RECUPERAR EL ID DEL FORMULARIO PARA LA SIGUIENTE TABLA
+    // conn.query('INSERT INTO direccion SET ?', {calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, (error,results)=>{
+    //     if(error){
+    //         console.log(error);
+    //     }else{
+    //         res.redirect('/');
+    //     }
+    // })
 //querys para insertar en la BD
     conn.query('INSERT INTO usuario SET ?', {Rut:Rut, Nombre:Nombre, ApellidoP:ApellidoP, ApellidoM:ApellidoM, Correo:Correo, Contrasena:Contrasena, Telefono:Telefono}, (error,results)=>{
     if(error){
@@ -56,14 +65,6 @@ exports.save = (req, res)=>{
     }
     }) 
     // conn.query('INSERT INTO formulario_solicitud SET ?', {Rut:Rut, Nombre_pyme:Nombre_pyme, Descripcion:Descripcion, RSH:RSH, Medio_pago:Medio_pago, Medio_entrega:Medio_entrega, Horario:Horario, tipoTienda:tipoTienda, Empresa_registrada:Empresa_registrada, Actividades_SII:Actividades_SII, Patente_permiso:Patente_permiso, R_sanitaria:R_sanitaria, Sitio_web:Sitio_web, Facebook:Facebook, Whatsapp:Whatsapp, Instagram:Instagram}, (error,results)=>{
-    //     if(error){
-    //         console.log(error);
-    //     }else{
-    //         res.redirect('/');
-    //     }
-    // })
-// IMPORTANTE PREOCUPARSE DE HACER UN SELECT ANTES DEL INSERT DE LA TABLA DIRECCION PQ SE DEBE RECUPERAR EL ID DEL FORMULARIO PARA LA SIGUIENTE TABLA
-    // conn.query('INSERT INTO direccion SET ?', {calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, (error,results)=>{
     //     if(error){
     //         console.log(error);
     //     }else{
