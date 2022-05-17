@@ -143,6 +143,14 @@
     padding-top:20px;
     padding-left:20px;
 }
+#solicitudes-pendientes{
+    padding-top: 40px;
+    padding-left: 40px;
+}
+ #tabla-visitas{
+     margin-left:400px;
+     margin-top:50px;
+ }
 
 /*javascript*/
 .nav_side{
