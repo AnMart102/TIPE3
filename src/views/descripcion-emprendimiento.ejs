@@ -63,7 +63,7 @@
               </div>
               <div id="categorias-emprendimiento">
                   <div class="categoria">
-                    <p>tag</p>
+                    <p><%= pyme[0].categorias %></p>
                   </div>
                   <div class="categoria">
                     <p>tag</p>
@@ -75,44 +75,39 @@
               <div id="datos-emprendimiento">
                 <div class="dato">
                   <ul>Direccion</ul>
-                  <ul>Fanpage de instagram</ul>                  
-                  <ul>Tienda virtual y/o fisica</ul>
-                  <ul>Correo</ul>
-                  <ul>numero de Telefono</ul>
-                </div>
-                <div class="dato">
-                  <ul>Direccion</ul>
                   <ul>Fanpage de instagram</ul> 
                   <ul>Tienda virtual y/o fisica</ul>
                   <ul>Correo</ul>
-                  <ul>numero de Telefono</ul>                                  
+                  <ul>numero de Telefono</ul> 
+                  
+                </div>
+                <div class="dato">
+                  <ul><%= pyme[0].calle  %> <%= pyme[0].numero %></ul>
+                  <ul><%= pyme[0].Instagram %>aa</ul>                  
+                  <ul><%= pyme[0].tipoTienda %></ul>
+                  <ul><%= pyme[0].Correo %></ul>
+                  <ul><%= pyme[0].Telefono %></ul>
+                                                   
                 </div>                                                                  
               </div>
               <div id="descripcion-emprendimiento">
-                <p>descripcion-At vero eos et accusamus et
-                   iusto odio dignissimos ducimus qui blanditiis
-                  praesentium voluptatum deleniti atque corrupti
-                  quos dolores et quas molestias excepturi sint 
-                  occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia
-                  animi, id est laborum et dolorum fuga. Et harum
-                  quidem rerum facilis est et expedita distinctio.</p>
+                <p><%= pyme[0].Descripcion %></p>
               </div>
               
               <div id="botones-redireccion">
                 <div class="boton-redireccion">
-                  <a href="#">Whatsapp</a>
+                  <a href="<%= pyme[0].Whatsapp %>">Whatsapp</a>
                 </div>
                 <div class="boton-redireccion">
-                  <a href="#">Instagram</a>
+                  <a href="<%= pyme[0].Instagram %>">Instagram</a>
                 </div>
                 <div class="boton-redireccion">
-                  <a href="#">Facebook</a>
+                  <a href="<%= pyme[0].Facebook %>">Facebook</a>
                 </div>
               </div>
               <div id="botones-filtro">
                 <div class="boton-redireccion-pagina">
-                  <a href="#">Pagina web</a>
+                  <a href="<%= pyme[0].Sitio_web %>">Pagina web</a>
                 </div>
               </div>
             </div>
