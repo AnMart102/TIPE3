@@ -1,0 +1,115 @@
+body{
+    background-color: beige;
+}
+#contenedor-pagina{
+
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#navbar{
+    background-color: beige;
+    height: 80px;
+
+}
+
+#navbar .container-fluid{
+    background-color: beige;
+        
+}
+
+#navbar .container-fluid .row {
+    height: 70px;
+}
+
+#navbar .container-fluid .row .col-navbar{
+    padding-top: 20px;
+}
+
+#navbar .container-fluid .row .col-navbar a{
+    color:black
+}
+#iniciar-sesion-buttom{
+
+    background-color: black;
+    border: 1px solid beige;
+    
+    font-weight: 400;
+    text-align: center;
+    width:150px;
+    height: 30px;
+}
+
+#navbar .container-fluid .row .col-navbar #iniciar-sesion-buttom a{
+    color:white;
+    text-decoration: none;
+}
+#formulario{
+    background-color: white;
+}
+
+#titulo-formulario-satisfaccion{
+    width: 90%;
+    height: 150px;
+    margin:0 auto;
+    background-color: beige;
+    text-align: center;
+    padding-top: 100px;
+    border-bottom: solid 1px rgb(136, 136, 127);
+}
+#descripcion-formulario-satisfaccion{
+    width: 90%;
+    margin:0 auto;
+    height: 70px;
+    background-color: beige;
+    text-align: center;
+}
+.pregunta{
+    width: 100%;
+    height: 170px;
+    background-color: white;
+}
+.pregunta-enunciado{
+    height: 110px;
+    width: 90%;
+    padding-top: 20px;
+    border-top: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+}
+.pregunta-opciones{
+    height: 60px;
+    width: 90%;
+    border-top: 1px solid black;
+    margin: 0 auto;
+    display: flex;
+    padding-top: 15px;
+}
+.opcion-pregunta{
+    margin:0 auto;
+}
+#comentario-final{
+    width: 100%;
+    height: 370px;
+    background-color: white;
+
+}
+#descripcion{
+    width: 70%;
+    height: 200px;
+    margin-left: 200px;
+    padding-left: 20px;
+    padding-top:10px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+#enviar-formulario{
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    width: 100px;
+    height: 30px;
+    margin-left:600px;
+
+}
