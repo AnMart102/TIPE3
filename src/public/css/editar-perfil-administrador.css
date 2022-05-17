@@ -117,16 +117,16 @@
 }
 
 #datos-del-usuario{
-    height:550px;
-    width:95%;
-
-    margin:0 auto;
+    height:400px;
+    width:1000px;
+    margin-left: 10%;
     margin-top: 30px;
     display:flex;
+    border-bottom:1px solid black
 }
 .columna-datos{
     height: 100%;
-    width: 33.33%;
+    width: 50%;
 }
 
 #editar-perfil-encabezado{
@@ -141,151 +141,6 @@
     width:200px;
     margin-left: 30px;
     margin-top:20px;
-}
-#fotos-perfil{
-    height: 300px;
-    width: 80%;
-    border: solid 2px rgb(197, 190, 190);
-    margin-top: 20px;
-}
-
-#imagen-principal{
-
-    height: 70%;
-    background-color: beige;
-}
-#imagen-principal img{
-    width: 100%;
-    height: 100%;
-}
-#imagenes-secundarias{
-    height: 30%;
-    width: 100%;
-    display:flex;
-    background-color: beige;
-}
-.imagen-secundaria{
-
-    height: 100%;
-    width: 25%;
-    background-color: beige;
-    border: solid 3px white;
-}
-.imagen-secundaria img{
-    width: 100%;
-    height: 100%;
-}
-
-#boton-seleccionar-imagen{
-    height: 60px;
-    width:300px;
-    background-color: beige;
-    text-align: center;
-    padding-top:20px;
-    margin-top: 30px;
-}
-#boton-seleccionar-imagen a{
-    text-decoration: none;
-    color:black;
-}
-
-#descripcion{
-
-    margin-top: 40px;
-    width: 70%;
-    margin-left: 10%;
-    padding-left: 20px;
-    padding-top:10px;
-    border: 1px solid black;
-
-
-}
-#imagenes-formulario{
-    width: 100%;
-    height:80px;
-    margin-top:20px;
-    background-color: white;
-    display:flex;
-}
-.titulo-adjuntar{
-    width: 50%;
-    height: 100%;
-    padding-top: 30px;
-    padding-left: 20px;
-    color:black;
-    background-color:white;
-    border-top: 1px solid #9E9E9E;
-}
-
-#imagenes{
-    width: 100%;
-    height: 130px;
-    display: flex;
-    padding-left: 52%;
-    border-bottom: 1px solid #9E9E9E;
-}
-
-.imagenes-de-archivos{
-    width: 80px;
-    height: 80px;
-    margin-left:40px;
-    margin-top: 30px;
-}
-
-
-.imagenes-de-archivos img{
-    width: 100px;
-    height: 100px;
-}
-
-#botones-elementos-imagenes{
-    width: 100%;
-    height: 130px;
-    display: flex;
-}
-
-#adjuntar-archivo{
-    width: 50%;
-    height: 130px;
-}
-
-#archivos-para-adjuntar{
-    width: 50%;
-    height: 130px;
-    padding-left: 45px;
-    background-color: white;
-    display:flex;
-}
-
-#adjuntar-archivo-buttom{
-
-    background-color: black;
-    border: 1px solid beige;
-    font-weight: 400;
-    text-align: center;
-    width:300px;
-    height: 50px;
-    margin-left:20%;
-    margin-top:40px;
-}
-
-#adjuntar-archivo-buttom a{
-
-    color:white;
-}
-
-.elementos-adjuntos{
-    background-color: beige;
-    text-align: center;
-    height: 100px;
-    width: 100px;
-    margin-top: 15px;
-    margin-left: 20px;
-    border: 1px solid black;
-}
-.elementos-adjuntos-vertical{
-
-    padding-top: 30px;
 }
 
 
@@ -314,15 +169,6 @@
     text-align: center;
     width:200px;
     height: 50px;
-}
-#comentario-moderador{
-
-    background-color: beige;
-    border: 1px solid black;    
-    width:550px;
-    height: 130px;
-    padding-left: 20px;
-    padding-top: 10px;
 }
 #cancelar a{
     color:black;

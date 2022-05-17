@@ -2,7 +2,6 @@
 
 #navbar{
     height: 80px;
-    background-color: rgb(209, 205, 205);
 }
 
 
@@ -21,7 +20,7 @@
 #iniciar-sesion-buttom{
 
     background-color: black;
-    border: 1px solid black;
+    border: 1px solid beige;
 
     font-weight: 400;
     text-align: center;
@@ -34,15 +33,14 @@
 }
 
 #descripcion-pyme{
-    height: 540px;
+    height: 700px;
     width: 90%;
     margin:0 auto;
-    margin-top: 30px;
     display:flex;
 }
 
 #fotos-perfil{
-    height: 100%;
+    height: 80%;
     width: 50%;
     border: solid 2px rgb(197, 190, 190);
 }
@@ -51,10 +49,6 @@
 
     height: 70%;
     background-color: beige;
-}
-#imagen-principal img{
-    width: 100%;
-    height: 100%;
 }
 #imagenes-secundarias{
     height: 30%;
@@ -68,10 +62,6 @@
     width: 25%;
     background-color: beige;
     border: solid 3px white;
-}
-.imagen-secundaria img{
-    width: 100%;
-    height: 100%;
 }
 
 
@@ -103,7 +93,7 @@
     background-color: rgb(31, 66, 82);
     color:white;
     text-align:center;
-    margin-left: 30px;
+    margin-left: 10px;
 
 }
 
@@ -115,6 +105,7 @@
     margin: 0 auto;
     border-bottom: solid 1px rgb(122, 117, 117);
     display: flex;
+    
 }
 .dato{
     height: 100%;
@@ -128,49 +119,26 @@
     margin: 0 auto;
 
 }
-
-.col-datos-representante{
-    margin-top:20px;
-    margin-left: 40px;
-}
-.datos-representante{
-
-    height: 50px;
-    width: 300px;
-    padding-left: 20px;
-    padding-top: 5px;
-    font-size: 20px;
-    border:solid 2px rgb(141, 137, 137)
-}
-.datos-representante a{
-    text-decoration: none;
-    color: black;
-}
-.col-descargar-documentos{
-    margin-top:40px;
-    margin-left: 190px;
-}
-#botones-filtro{
-    height:100px;
-    width:70%;
+#botones-redireccion{
+    height:50px;
+    width:100%;
     display:flex;
-    margin:0 auto;
-    padding-left: 150px;
-    padding-top: 40px;
+
 }
-.boton-filtro{
+.boton-redireccion,.boton-redireccion-pagina{
     height: 40px;
     width:150px;
     background-color: rgb(67, 67, 68);
     border: solid 1px rgb(67, 67, 68); 
-    margin-left: 40px;
+    margin: 0 auto;
     text-align: center;
     padding-top: 7px;
 }
+.boton-redireccion-pagina{
+    margin-top: 20px;
+}
 
-.boton-filtro a{
+.boton-redireccion a,.boton-redireccion-pagina a{
     text-decoration: none;
     color:white;
 }
-
-
