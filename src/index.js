@@ -29,7 +29,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new PassportLocal(function(username,password,done){
-    conn.query('Select * from usuario where Rut = ? and Contrasena = ?', [username, password], (err,resp,campos) =>{
+    conn.query('Select * from usuario where Correo = ? and Contrasena = ?', [username, password], (err,resp,campos) =>{
         try{
              var user;
              var pass;
@@ -38,7 +38,7 @@ passport.use(new PassportLocal(function(username,password,done){
                    user= "asd";
                    pass ="asd";
               }else{
-                   user = resp[0].Rut;
+                   user = resp[0].Correo;
                    pass = resp[0].Contrasena;
                    rol  = resp[0].Rol;
                    module.exports = {
@@ -47,7 +47,7 @@ passport.use(new PassportLocal(function(username,password,done){
               }
           if(username === user && password ===pass){
                console.log("entre aqui")
-               return done(null,{id:resp[0].Rut, name: resp[0].Nombre});
+               return done(null,{id:resp[0].Correo, name: resp[0].Nombre});
               
           }
 }catch(e){

@@ -45,6 +45,10 @@ router.get('/registro',(req,res)=>{
         res.render('registro.ejs');
 });
 
+//DASHBOARD ADMIN
+router.get('/Dashboard',(req,res)=>{
+    res.render('estadisticasVisitas.ejs');
+});
 //RUTA CRUD FORMULARIO DE INSCRIPCION
 router.post('/save', crud.save);
 

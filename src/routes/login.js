@@ -24,7 +24,7 @@ router.get('/correcto', (req,res,next)=>{
     let op = require("../index.js")
     let tipo_usuario = op.rol1;
     if(tipo_usuario==="Admin"){
-        res.redirect('/registro');
+        res.redirect('/Dashboard');
     }else if(tipo_usuario==="User"){
         res.redirect('/');
     }   
