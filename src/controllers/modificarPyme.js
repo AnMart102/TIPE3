@@ -60,7 +60,7 @@ exports.guardar = (req, res)=>{
             res.redirect('/');
         }
     })
-    conexion.query('UPDATE direccion as d JOIN usuario as u SET ? WHERE d.id_direccion = u.id_direccion and u.Rut = ?', [{calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, Rut], (error,results)=>{
+    conexion.query('UPDATE direccion as d SET ? WHERE d.Rut = ?', [{calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, Rut], (error,results)=>{
         if(error){
             console.log(error);
         }else{

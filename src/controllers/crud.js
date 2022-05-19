@@ -39,31 +39,32 @@ exports.save = (req, res)=>{
     const localidad = req.body.localidad;
     const PoblaVilla = req.body.PoblaVilla;
 //categorias
-    const Categoria = req.body.Categoria;
+    const categorias = req.body.categorias;
 //subcat
-    const nombre_subcat = req.body.nombre_subcat;
+    const id_categorias = req.body.id_categorias;
+    const sub_cat = req.body.nombre_sub_cat;
 //archivos
     const archivo = req.body.archivo;
 
 //mostrar por consola que se obtienen los datos
     console.log(Correo +" - "+ Nombre +" - "+ ApellidoP +" - "+ ApellidoM +" - "+ Contrasena +" - "+ Telefono);
 
-// IMPORTANTE PREOCUPARSE DE HACER UN SELECT ANTES DEL INSERT DE LA TABLA DIRECCION PQ SE DEBE RECUPERAR EL ID DEL FORMULARIO PARA LA SIGUIENTE TABLA
-    // conn.query('INSERT INTO direccion SET ?', {calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, (error,results)=>{
-    //     if(error){
-    //         console.log(error);
-    //     }else{
-    //         res.redirect('/');
-    //     }
-    // })
+//IMPORTANTE PREOCUPARSE DE HACER UN SELECT ANTES DEL INSERT DE LA TABLA DIRECCION PQ SE DEBE RECUPERAR EL ID DEL FORMULARIO PARA LA SIGUIENTE TABLA
+    conn.query('INSERT INTO direccion SET ?', {Rut:Rut,calle:calle, numero:numero, CasaDepto:CasaDepto, localidad:localidad, PoblaVilla:PoblaVilla}, (error,results)=>{
+        if(error){
+            console.log(error);
+        }else{
+            res.redirect('/');
+        }
+    })
 //querys para insertar en la BD
-    conn.query('INSERT INTO usuario SET ?', {Rut:Rut, Nombre:Nombre, ApellidoP:ApellidoP, ApellidoM:ApellidoM, Correo:Correo, Contrasena:Contrasena, Telefono:Telefono}, (error,results)=>{
-    if(error){
-        console.log(error);
-    }else{
-        res.redirect('/');
-    }
-    }) 
+    // conn.query('INSERT INTO usuario SET ?', {Rut:Rut, Nombre:Nombre, ApellidoP:ApellidoP, ApellidoM:ApellidoM, Correo:Correo, Contrasena:Contrasena, Telefono:Telefono}, (error,results)=>{
+    // if(error){
+    //     console.log(error);
+    // }else{
+    //     res.redirect('/');
+    // }
+    // }) 
     // conn.query('INSERT INTO formulario_solicitud SET ?', {Rut:Rut, Nombre_pyme:Nombre_pyme, Descripcion:Descripcion, RSH:RSH, Medio_pago:Medio_pago, Medio_entrega:Medio_entrega, Horario:Horario, tipoTienda:tipoTienda, Empresa_registrada:Empresa_registrada, Actividades_SII:Actividades_SII, Patente_permiso:Patente_permiso, R_sanitaria:R_sanitaria, Sitio_web:Sitio_web, Facebook:Facebook, Whatsapp:Whatsapp, Instagram:Instagram}, (error,results)=>{
     //     if(error){
     //         console.log(error);
@@ -71,22 +72,22 @@ exports.save = (req, res)=>{
     //         res.redirect('/');
     //     }
     // })
-    // conn.query('INSERT INTO categorias SET ?', {Categoria:Categoria}, (error,results)=>{
+    // conn.query('INSERT INTO categorias (categorias, id_formulario) SELECT ?, max(id_formulario) FROM formulario_solicitud', {categorias:categorias}, (error,results)=>{
+    //     if(error){
+    //         console.log(error);
+    //     }else{
+    //         res.redirect('/');
+    //     } 
+    // })
+    // conn.query('INSERT INTO subcat (sub_cat, id_categorias) SELECT ?, id_categorias from categorias WHERE tiempo=(SELECT max(tiempo) FROM categorias WHERE id_categorias = ?)', [{sub_cat:sub_cat}, id_categorias], (error,results)=>{
     //     if(error){
     //         console.log(error);
     //     }else{
     //         res.redirect('/');
     //     }
     // })
-    // conn.query('INSERT INTO subcat SET ?', {nombre_subcat:nombre_subcat}, (error,results)=>{
-    //     if(error){
-    //         console.log(error);
-    //     }else{
-    //         res.redirect('/');
-    //     }
-    // })
-    //ver como se sabe que el archivo que estoy poniendo corresponde o esta ligado a mi pyme lo mismo con las demas de arriba!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // conn.query('INSERT INTO archivos SET ?', {archivo:archivo}, (error,results)=>{
+    //ver como manejarlos !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // conn.query('INSERT INTO archivos (archivo, id_formulario) SELECT ?, max(id_formulario) FROM formulario_solicitud', {archivo:archivo}, (error,results)=>{
     //     if(error){
     //     console.log(error);
     // }else{

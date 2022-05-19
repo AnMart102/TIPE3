@@ -82,7 +82,7 @@ router.get('/Emprendimiento/:id_formulario', (req, res)=>{//poner el nombre que 
 //Ruta para mostrar la vista para que el administrador apruebe rechace o pida una modificacion del formulario pyme
 router.get('/POR PONER /:id_formulario', (req, res)=>{//poner el nombre que creee el andres de la vista
     const id_formulario = req.params.id_formulario;
-    conn.query('SELECT Nombre, ApellidoP, ApellidoM, Correo, Telefono, Nombre_pyme, Descripcion, RSH, Medio_pago, Medio_entrega, Horario, tipoTienda, Empresa_registrada, Actividades_SII, Patente_permiso, R_sanitaria, estado_sol, Sitio_web, Facebook, Whatsapp, Instagram, Comentario_admin, calle, numero, CasaDepto, localidad, PoblaVilla, categorias, archivo, sub_cat FROM usuario AS u JOIN direccion as d JOIN formulario_solicitud as f JOIN archivos as a JOIN categorias as c JOIN subcat as s WHERE f.id_formulario = ? AND u.Rut=f.Rut AND u.id_direccion=d.id_direccion AND f.id_formulario=a.id_formulario AND f.id_formulario=c.id_formulario AND c.id_categorias=s.id_categorias AND Rol = "User"', [id_formulario], (error, results)=>{
+    conn.query('SELECT Nombre, ApellidoP, ApellidoM, Correo, Telefono, Nombre_pyme, Descripcion, RSH, Medio_pago, Medio_entrega, Horario, tipoTienda, Empresa_registrada, Actividades_SII, Patente_permiso, R_sanitaria, estado_sol, Sitio_web, Facebook, Whatsapp, Instagram, Comentario_admin, calle, numero, CasaDepto, localidad, PoblaVilla, categorias, archivo, sub_cat FROM usuario AS u JOIN direccion as d JOIN formulario_solicitud as f JOIN archivos as a JOIN categorias as c JOIN subcat as s WHERE f.id_formulario = ? AND u.Rut=f.Rut AND u.Rut=d.Rut AND f.id_formulario=a.id_formulario AND f.id_formulario=c.id_formulario AND c.id_categorias=s.id_categorias AND Rol = "User"', [id_formulario], (error, results)=>{
         if(error){
             throw error;
         }else{
@@ -90,7 +90,7 @@ router.get('/POR PONER /:id_formulario', (req, res)=>{//poner el nombre que cree
         }
     })
 })
-
+  
 //RUTA modificarPyme
 router.post('/guardar', modificarPyme.guardar);
 
