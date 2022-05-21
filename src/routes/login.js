@@ -26,7 +26,7 @@ router.get('/correcto', (req,res,next)=>{
     if(tipo_usuario==="Admin"){
         res.redirect('/Dashboard');
     }else if(tipo_usuario==="User"){
-        res.redirect('/');
+        res.redirect('/user');
     }   
 });
 
