@@ -148,13 +148,23 @@
     text-align: center;
     padding-top: 50px;
 }
+#grafico-estadisticas-dia{
+    width: 50%;
+    height: 100%;
+    border: 1px solid black;
+}
+.graficos{
+    height: 100%;
+    width: 100%;
+}
 
 #grafico-estadisticas-mes{
     margin:0 auto;
     margin-top: 50px;
-    width: 90%;
+    width: 80%;
     height: 300px;
     border: 1px solid black;
+    overflow:hidden;
 
 }
 
