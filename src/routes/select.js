@@ -17,7 +17,7 @@ const { Router } = require('express');
 //QUERY FILTRADO POR CATEGORIA INDEX
 // router.get('/:id_categoria', (req,res) => {
 //     const id_categoria = req.params.id_categoria;
-//     conn.query('SELECT Nombre_pyme,Descripcion,estado_sol,Categoria FROM formulario_solicitud AS f JOIN categorias as c WHERE c.id_categoria = ? and f.id_categoria=c.id_categoria', [id_categoria], (error,results) => {
+//     conn.query('SELECT Nombre_pyme,Descripcion,estado_sol,categorias FROM formulario_solicitud AS f JOIN categorias as c WHERE c.id_formulario = ? and f.id_formulario=c.id_formulario', [id_categoria], (error,results) => {
 //         if(error){
 //             throw error;
 //         }else{
@@ -40,6 +40,17 @@ const { Router } = require('express');
 
 //QUERY BARRA DE BUSQUEDA INDEX
 //
+
+//Query carga editar perfil usuario
+router.get('/usuario/editar/:id_formulario',(req,res)=>{
+   const id_formulario=req.params.id_formulario;
+    res.render('editarPerfilUsuario.ejs');
+});
+
+router.get("/user",(req,res)=>{
+    res.render('estadisticasPyme.ejs')
+});
+
 //RUTA PARA EL REGISTRO
 router.get('/registro',(req,res)=>{
         res.render('registro.ejs');

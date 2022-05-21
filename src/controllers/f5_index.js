@@ -13,7 +13,7 @@ exports.upgrade = (req, res)=>{
             console.log(datos1);
         }
     })
-    conn.query('Select DISTINCT categorias FROM categorias', (error,results) =>{
+    conn.query('Select id_formulario,categorias FROM categorias GROUP BY categorias;', (error,results) =>{
         if(error){
             throw error;
         }else{
