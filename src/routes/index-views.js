@@ -20,7 +20,5 @@ router.post('/save', crud.save);
 //RUTA MOSTRAR QUERYS INDEX 
 router.get('/', f5_index.upgrade);
 
-router.get("/emprendimientos",(req,res)=>{
-    res.render('filtro-emprendimientos.ejs')
-});
+
 module.exports = router;

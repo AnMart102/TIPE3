@@ -24,16 +24,6 @@
               <div class="col-2 col-navbar">
                 <a href="#">inicio</a>
               </div>
-              <div class="col-2 col-navbar">
-                <a href="#">emprendimientos</a>
-              </div>
-              <div class="col-3 col-navbar">
-                <a href="#">quiero promocionar mi emprendimiento</a>
-              </div>
-              <div class="col-2 col-navbar">
-                <div id="iniciar-sesion-buttom">
-                  <a href="/login">Iniciar Sesion</a>
-                </div>
               </div>
             </div>
           </div>
@@ -59,14 +49,15 @@
         </div>
         <div id="descripcion-perfil">
           <div id="nombre-emprendimiento">
-              <h2>Nombre de emprendimiento</h2>
+              <h2><%=formulario[0].Nombre_pyme%></h2>
+
           </div>
           <div id="categorias-emprendimiento">
             <div class="categoria">
-              <p>categoria</p>
+              <p><%=formulario[0].categorias%></p>
             </div>
             <div class="categoria">
-              <p>subcategoria</p>
+              <p><%=formulario[0].sub_cat%></p>
             </div>                    
           </div>
           <div id="datos-emprendimiento">
@@ -78,22 +69,15 @@
               <ul>numero de Telefono</ul>
             </div>
             <div class="dato">
-              <ul>Direccion</ul>
-              <ul>Fanpage de instagram</ul> 
-              <ul>Tienda virtual y/o fisica</ul>
-              <ul>Correo</ul>
-              <ul>numero de Telefono</ul>                                  
+              <ul><%= formulario[0].calle  %> <%= formulario[0].numero %></ul>
+              <ul><%=formulario[0].Instagram%>aa</ul> 
+              <ul><%=formulario[0].tipoTienda%></ul>
+              <ul><%=formulario[0].Correo%></ul>
+              <ul><%=formulario[0].Telefono%></ul>                                  
             </div>                                                                  
           </div>
           <div id="descripcion-emprendimiento">
-            <p>descripcion-At vero eos et accusamus et
-                   iusto odio dignissimos ducimus qui blanditiis
-                  praesentium voluptatum deleniti atque corrupti
-                  quos dolores et quas molestias excepturi sint 
-                  occaecati cupiditate non provident, similique
-                  sunt in culpa qui officia deserunt mollitia
-                  animi, id est laborum et dolorum fuga. Et harum
-                  quidem rerum facilis est et expedita distinctio.</p>
+            <p><%=formulario[0].Descripcion%></p>
           </div>
         </div>
       </div>
@@ -101,13 +85,13 @@
         <div class="container">
           <div class="row">
             <div class="col-3 col-datos-representante">
-              <div class="datos-representante">First Name</div>
+              <div class="datos-representante"><%=formulario[0].Nombre%></div>
             </div>
             <div class="col-3 col-datos-representante">
-              <div class="datos-representante">Apellido1</div>
+              <div class="datos-representante"><%=formulario[0].ApellidoP%></div>
             </div>
             <div class="col-3 col-datos-representante">
-              <div class="datos-representante">Apellido2</div>
+              <div class="datos-representante"><%=formulario[0].ApellidoM%></div>
             </div>
           </div>
           <div class="row">
@@ -115,16 +99,16 @@
               <div class="datos-representante">Antiguedad</div>
             </div>
             <div class="col-3 col-datos-representante">
-              <div class="datos-representante">Subcategoria propuesta</div>
+              <div class="datos-representante"><%=formulario[0].sub_cat%></div>
             </div>
-            <div class="col-3 col-datos-representante">
-              <div class="datos-representante">RUT</div>
-            </div>
+            <!-- <div class="col-3 col-datos-representante">
+              <div class="datos-representante"><%=formulario[0].Rut%></div>
+            </div> -->
           </div>
 
           <div class="row">
             <div class="col-3 col-datos-representante">
-              <div class="datos-representante">Empresa registrada SI/NO</div>
+              <div class="datos-representante">Empresa registrada: <%=formulario[0].Empresa_registrada%></div>
             </div>
           </div>
 
