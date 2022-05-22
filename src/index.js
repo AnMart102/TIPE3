@@ -1,5 +1,3 @@
-
-
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
@@ -67,13 +65,9 @@ passport.deserializeUser(function(id,done){
 });
 
 // rutas
-
-app.use(require('./routes/select.js'));
-// app.use(require('./controllers/crud.js'));
-// app.use(require('./routes/delete.js'));
-// app.use(require('./routes/alter.js'));
-// app.use(require('./routes/insert.js'));
-// app.use(require('./routes/drop.js'));
+app.use(require('./routes/Users.js'));
+app.use(require('./routes/index-views.js'));
+app.use(require('./routes/admin.js'));
 app.use(require('./routes/login.js'));
 //SOLO USAR DROP AL FINAL O PRODUCIRA PROBLEMAS CON LA TABLA A ELIMINAR POR LOS DATOS
 
