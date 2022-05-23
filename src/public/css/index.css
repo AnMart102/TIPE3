@@ -6,38 +6,102 @@
 }
 
 #navbar{
-    background-color: beige;
-    height: 80px;
-
+    background-color: #97d700;
+    height: 100px;
+    display: flex;
 }
 
-#navbar .container-fluid{
-    background-color: beige;
-        
+@media (min-width: 770px){
+    #navbar-android{
+        display: none;
+    }
+    .opciones-menu{
+        display:none;
+    }
+
+    #inicio{
+        width: 20%;
+        padding-top: 30px;
+    }
+    #emprendimientos{
+        width: 35%;
+        padding-top: 30px;
+    }
+    #promocionar{
+        width: 40%;
+        padding-top: 15px;
+        padding-left: 40px;
+    }
+    .opciones-nav{
+        padding-left: 40px;
+    }
+    .opciones-nav a{
+        color:white;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    #div-iniciar-sesion{
+        width:28%;
+        padding-top: 30px;
+    }
+    #iniciar-sesion-buttom{
+        background-color:#EF3340;
+        border: 1px solid #97d700;
+        text-align: center;
+        margin-top: 30px;
+        width:150px;
+        height: 30px;
+        margin:0 auto;   
+    }
+    #iniciar-sesion-buttom a{
+        color:white;
+        text-decoration: none;
+    }
 }
+@media (max-width: 770px){
+    #navbar-android{
+        width: 100%;
+        height:65px;
+        background-color: #97d700;
+        display:block;
+    }
+    .opciones-menu{
+        background-color:#EF3340;
+        height: 0px;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        transition:all 300ms cubic-bezier(0.0785, 0.135, 0.15, 0.86);
+    }
+    .opciones-menu a {
+        text-decoration: none;
+        color:white;
+    }
+    .opciones-menu a li{
+        list-style: none;
+        margin-bottom: 20px;
+    }
+    #icono-desplegable{
+        width:80px;
+        height:100%;
+        background-color: #97d700;
+        text-align: center;
+        color:white;
+        font-size: 40px;
+    }
+    #icono-desplegable i{
+        cursor: pointer;
+    }
+    #navbar{
+        display:none;
+    }
 
-#navbar .container-fluid .row {
-    height: 70px;
 }
-
-#navbar .container-fluid .row .col-navbar{
-    padding-top: 20px;
-    border-right: 1px solid #9E9E9E;
-}
-
-#navbar .container-fluid .row .col-navbar a{
-    color:black;
-}
-
-#iniciar-sesion-buttom{
-
-    background-color: black;
-    border: 1px solid beige;
-
-    font-weight: 400;
-    text-align: center;
-    width:150px;
-    height: 30px;
+#logo-municipalidad img{
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 #navbar .container-fluid .row .col-navbar #iniciar-sesion-buttom a{
@@ -45,18 +109,26 @@
 }
 
 #bienvenido{
-    background-color: beige;
+    background-color: white;
     border-bottom: 1px solid #9E9E9E;
-
     text-align: center;
     font-family: sans-serif;
+    width: 80%;
+    height: 600px;
 
-    height: 400px;
-    padding-top: 100px;
+}
+#logo-municipalidad{
+    width: 150px;
+    height: 170px;
+    background-color: white;
+    margin:0 auto;
+
+    margin-bottom: 70px;
 }
 
 #buscar{
     background-color: white;
+    border:2px solid rgb(121, 121, 119); 
 
     margin-top: 50px;
     padding-left: 20px;
@@ -67,7 +139,7 @@
 
 #buscar-buttom{
 
-    background-color: black;
+    background-color: #EF3340;
     border: 1px solid beige;
     color:beige;
     
@@ -90,27 +162,18 @@
 
 .rowCategorias{
     height: 200px;
+    display: flex;
 }
-.rowCategorias .col-1{
-    margin-left: 100px;
-}
-.rowCategorias .col-1 p{
-    margin-left: 25px;
-}
+
 .categoria{
     border: 1px solid #9E9E9E;
     background-color: white;
     height: 150px;
     width:120px;
+    margin:0 auto;
 }
 
-#categorias .row .category{
-    margin-left: 150px;
-    padding-top: 10px;
-    position:relative;
-    left:70px;
 
-}
 
 #emprendimientos-locales{
 
@@ -138,4 +201,12 @@
 
 #emprendimientos-locales .row .col-emprendimientos-locales{
     padding-top: 20px;
+}
+
+/*javascript*/
+@media (max-width: 770px){
+    .nav_side{
+        height: 200px;
+        padding-top:20px;
+    }
 }
