@@ -1,6 +1,5 @@
-
 var parametros_grafico_pymes = ['En', 'Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-var valores_grafico_pymes = [4,5,2,30,3,4,5,1,0,0,0,0];
+var valores_grafico_pymes = [1,2,3,4,5,6,7,8,9,10,11,12];
 
 var data= [{
     x: parametros_grafico_pymes,
