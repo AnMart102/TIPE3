@@ -5,7 +5,6 @@ const passport = require('passport');
 const { commit } = require('../database');
 const router = express.Router();
 const conn = require('../database');
-const crud = require('../controllers/crud.js');
 const modificarPyme = require('../controllers/modificarPyme.js');
 
 const { Router } = require('express');

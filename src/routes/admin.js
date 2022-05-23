@@ -54,4 +54,6 @@ router.get('/PONER NOMBRE',solicitudPymeAdmin.administrarSolicitudes);//poner el
 //RUTA MOSTRAR ESTADISTICAS DEL ADMIN 
 router.get('/editarPerfilAdmin', mostrarEstadisticasAdmin.mostrarEstAdmin);//ponerle el nombre del archivo de la vista de estadisticas admin que el andres creo
 
+
 module.exports = router;
+

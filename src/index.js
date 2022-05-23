@@ -66,6 +66,7 @@ passport.deserializeUser(function(id,done){
 
 // rutas
 app.use(require('./routes/Users.js'));
+app.use(require('./routes/registro.js'));
 app.use(require('./routes/index-views.js'));
 app.use(require('./routes/admin.js'));
 app.use(require('./routes/login.js'));
