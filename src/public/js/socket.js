@@ -1,5 +1,5 @@
 const fs = require("fs");
-
+var moment = require("moment");
 let usuarios_conectados = 0;
 var visitas = 0;
 let visitas_dia = moment.hour();
@@ -38,7 +38,7 @@ module.exports = function (io, app) {
   io.on("connection", (socket) => {
     console.log("Nuevo usuario conectado " + socket.id);
     usuarios_conectados++;
-    if (visitas_dia = bandera) {
+    if ((visitas_dia = bandera)) {
         visitas = 0;
      }
     else{
