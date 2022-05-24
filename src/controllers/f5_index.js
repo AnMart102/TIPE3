@@ -5,7 +5,7 @@ const router = express.Router();
 const conn = require('../database');
 
 exports.upgrade = (req, res)=>{
-    conn.query('SELECT Nombre_pyme,Descripcion,id_formulario FROM formulario_solicitud ', (error,results) =>{
+    conn.query('SELECT Nombre_pyme,Descripcion,id_formulario FROM formulario_solicitud', (error,results) =>{
         if(error){
             throw error;
         }else{
@@ -13,7 +13,7 @@ exports.upgrade = (req, res)=>{
             console.log(datos1);
         }
     })
-    conn.query('Select id_formulario,categorias FROM categorias GROUP BY categorias;', (error,results) =>{
+    conn.query('Select id_formulario,categorias FROM categorias GROUP BY categorias', (error,results) =>{
         if(error){
             throw error;
         }else{
