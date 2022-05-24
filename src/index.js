@@ -70,6 +70,7 @@ app.use(require('./routes/registro.js'));
 app.use(require('./routes/index-views.js'));
 app.use(require('./routes/admin.js'));
 app.use(require('./routes/login.js'));
+// app.use(require('./public/js/socket.js'));
 //SOLO USAR DROP AL FINAL O PRODUCIRA PROBLEMAS CON LA TABLA A ELIMINAR POR LOS DATOS
 
 //PARA EL CRUD crud.js y guardar los datos del formulario en un json

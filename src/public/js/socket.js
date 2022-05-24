@@ -1,5 +1,5 @@
-const fs = require("fs");
-var moment = require("moment");
+
+
 let usuarios_conectados = 0;
 var visitas = 0;
 let visitas_dia = moment.hour();
