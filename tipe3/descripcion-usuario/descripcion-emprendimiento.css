@@ -1,0 +1,144 @@
+
+
+#navbar{
+    height: 80px;
+}
+
+
+#navbar .container-fluid .row {
+    height: 70px;
+}
+
+#navbar .container-fluid .row .col-navbar{
+    padding-top: 20px;
+}
+
+#navbar .container-fluid .row .col-navbar a{
+    color:black;
+}
+
+#iniciar-sesion-buttom{
+
+    background-color: black;
+    border: 1px solid beige;
+
+    font-weight: 400;
+    text-align: center;
+    width:150px;
+    height: 30px;
+}
+
+#navbar .container-fluid .row .col-navbar #iniciar-sesion-buttom a{
+    color:beige;
+}
+
+#descripcion-pyme{
+    height: 700px;
+    width: 90%;
+    margin:0 auto;
+    display:flex;
+}
+
+#fotos-perfil{
+    height: 80%;
+    width: 50%;
+    border: solid 2px rgb(197, 190, 190);
+}
+
+#imagen-principal{
+
+    height: 70%;
+    background-color: beige;
+}
+#imagenes-secundarias{
+    height: 30%;
+    width: 100%;
+    display:flex;
+    background-color: beige;
+}
+.imagen-secundaria{
+
+    height: 100%;
+    width: 25%;
+    background-color: beige;
+    border: solid 3px white;
+}
+
+
+#descripcion-perfil{
+    height: 100%;
+    width: 50%;
+}
+
+#nombre-emprendimiento{
+    height: 60px;
+    width: 100%;
+    text-align:center;
+    padding-top: 20px;
+}
+#categorias-emprendimiento{
+    height: 60px;
+    width: 80%;
+    text-align:center;
+    padding-top: 20px;
+    display: flex;
+    margin: 0 auto;
+    padding-left: 80px;
+    border-bottom: solid 1px rgb(122, 117, 117);
+}
+
+.categoria{
+    height: 30px;
+    width: 100px;
+    background-color: rgb(31, 66, 82);
+    color:white;
+    text-align:center;
+    margin-left: 10px;
+
+}
+
+#datos-emprendimiento{
+    height: 230px;
+    width: 80%;
+    padding-top: 20px;
+    display: flex;
+    margin: 0 auto;
+    border-bottom: solid 1px rgb(122, 117, 117);
+    display: flex;
+    
+}
+.dato{
+    height: 100%;
+    width: 50%;
+}
+#descripcion-emprendimiento{
+    height: 170px;
+    width: 80%;
+    padding-top: 20px;
+    display: flex;
+    margin: 0 auto;
+
+}
+#botones-redireccion{
+    height:50px;
+    width:100%;
+    display:flex;
+
+}
+.boton-redireccion,.boton-redireccion-pagina{
+    height: 40px;
+    width:150px;
+    background-color: rgb(67, 67, 68);
+    border: solid 1px rgb(67, 67, 68); 
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 7px;
+}
+.boton-redireccion-pagina{
+    margin-top: 20px;
+}
+
+.boton-redireccion a,.boton-redireccion-pagina a{
+    text-decoration: none;
+    color:white;
+}

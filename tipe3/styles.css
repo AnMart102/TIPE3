@@ -1,0 +1,142 @@
+#contenedor-pagina{
+
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#navbar{
+    background-color: beige;
+    height: 80px;
+
+}
+
+#navbar .container-fluid{
+    background-color: beige;
+        
+}
+
+#navbar .container-fluid .row {
+    height: 70px;
+}
+
+#navbar .container-fluid .row .col-navbar{
+    padding-top: 20px;
+    border-right: 1px solid #9E9E9E;
+}
+
+#navbar .container-fluid .row .col-navbar a{
+    color:black;
+}
+
+#iniciar-sesion-buttom{
+
+    background-color: black;
+    border: 1px solid beige;
+    color:beige;
+    
+    font-weight: 400;
+    text-align: center;
+    width:150px;
+    height: 30px;
+}
+
+#bienvenido{
+    background-color: beige;
+    border-bottom: 1px solid #9E9E9E;
+
+    text-align: center;
+    font-family: sans-serif;
+
+    height: 400px;
+    padding-top: 100px;
+}
+
+#buscar{
+    background-color: white;
+
+    margin-top: 50px;
+    padding-left: 20px;
+
+    width:300px;
+    height: 40px;
+}
+
+#buscar-buttom{
+
+    background-color: black;
+    border: 1px solid beige;
+    color:beige;
+    
+    font-weight: 400;
+
+    width:95px;
+    height: 40px;
+
+}
+
+#categorias{
+    background-color: white;
+    border-bottom: 1px solid #9E9E9E;
+
+    text-align: center;
+    font-family: sans-serif;
+
+    height: 450px;
+    padding-top: 50px;
+
+}
+
+#categorias p{
+    font-size: 20px;
+    margin-top:30px;
+    margin-bottom: 50px;
+}
+
+#categorias .rowCategorias{
+    height: 150px;
+}
+
+#categorias .rowCategorias .categoria{
+    border: 1px solid #9E9E9E;
+    background-color: white;
+    margin-left: 150px;
+    position:relative;
+    left:70px;
+}
+
+#categorias .row .category{
+    margin-left: 150px;
+    padding-top: 10px;
+    position:relative;
+    left:70px;
+
+}
+
+#emprendimientos-locales{
+
+    background-color: white;
+    font-family: sans-serif;
+
+    height: 450px;
+    padding-top: 50px;
+
+}
+
+#emprendimientos-locales h2{
+    
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+#emprendimientos-locales .row{
+    background-color: beige;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    height: 120px;
+}
+
+#emprendimientos-locales .row .col-emprendimientos-locales{
+    padding-top: 20px;
+}
