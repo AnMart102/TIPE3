@@ -88,9 +88,31 @@ router.post('/registroF',(req,res)=>{
 });
 
 router.get('/registroC',(req,res)=>{
-    conn.query('SELECT id_formulario FROM formulario_solicitud ORDER BY ID_P DESC LIMIT 1', (err,resp,campos) => {
+    conn.query('SELECT id_formulario FROM formulario_solicitud ORDER BY id_formulario DESC LIMIT 1', (err,resp,campos) => {
         console.log(resp);
         res.render('registroC.ejs',{
+        InfoID : resp
+        });
+    });
+});
+
+router.post('/registroC',(req,res)=>{
+        const categorias = req.body.categorias;
+        const id_formulario = req.body.id_formulario;
+        conn.query('INSERT INTO categorias SET ?', {categorias:categorias,id_formulario:id_formulario}, (error,results)=>{
+        if(error){
+            console.log(error);
+        }else{
+            res.redirect('/registroS');
+        } 
+    })
+
+});
+
+router.get('/registroS',(req,res)=>{
+    conn.query('SELECT id_categoria FROM formulario_solicitud ORDER BY id_categoria DESC LIMIT 1', (err,resp,campos) => {
+        console.log(resp);
+        res.render('registroS.ejs',{
         InfoID : resp
         });
     });

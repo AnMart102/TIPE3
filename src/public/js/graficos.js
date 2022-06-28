@@ -1,4 +1,3 @@
-const {visitas} = require("./socket");
 const {visitas_ene} = require("./socket");
 const {visitas_feb} = require("./socket");
 const {visitas_mar} = require("./socket");

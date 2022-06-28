@@ -43,21 +43,21 @@
           <h2>Emprendedor ingrese sus datos</h2>
         </div>
 
-        <form id="formulario" class="container-fluid" action="/save" method="post">
+        <form id="formulario" class="container-fluid" action="/registroC" method="post">
 
           <div class="row">
 
             <div class="col-3">
-              <select name="Empresa registrada(si/no)" class="datos-formulario" aria-placeholder="Empresa registrada(si/no)">
-                <option value="categorias">categorias</option>
-                <option value="categoria1">categoria1</option>
-                <option value="categoria2">categoria2</option>
-                <option value="categoria3">categoria3</option>
-                <option value="categoria4">categoria4</option>
-                <option value="categoria5">categoria5</option>
-                <option value="categoria6">categoria6</option>
+              <select name="categorias" class="datos-formulario" aria-placeholder="Empresa registrada(si/no)">
+                <option value="">categorias</option>
+                <option value="1">Artesania</option>
+                <option value="2">Comida</option>
+                <option value="3">Ropa y Accesorios</option>
+                <option value="4">Decoracion</option>
+                <option value="5">Muebleria</option>
               </select>
             </div>
+            <input type="hidden"  name="id_formulario" value='<%=InfoID[0].id_formulario%>'>
           </div>
 
           <div id="botones-enviar-formulario">

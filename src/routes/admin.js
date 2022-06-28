@@ -16,6 +16,28 @@ router.get('/Dashboard',(req,res)=>{
     res.render('estadisticasVisitas.ejs');
 });
 
+
+//Query para mostrar grafico de nuevas pymes en ciertas unidades de tiempo (dias, semanas y meses)
+router.get('/POR PONER /', (req, res)=>{//poner el nombre que creee el andres de la vista
+    conn.query('SELECT tiempo FROM usuario as u JOIN formulario_solicitud as f WHERE u.Rut=f.Rut', (error, results)=>{
+        if(error){
+            throw error;
+        }else{
+            res.render('/POR PONER.ejs', {estadistica1:results[0]});//poner el nombre que creee el andres de la vista
+        }
+    })
+})
+//Query para mostrar las estadisticas admin especificamente cantidad de usuarios en la plataforma.
+router.get('/POR PONER /', (req, res)=>{//poner el nombre que creee el andres de la vista
+    conn.query('SELECT COUNT(Nombre_pyme) FROM usuario as u JOIN formulario_solicitud as f WHERE u.Rut=f.Rut;', (error, results)=>{
+        if(error){
+            throw error;
+        }else{
+            res.render('/POR PONER.ejs', {estadistica2:results[0]});//poner el nombre que creee el andres de la vista
+        }
+    })
+})
+
 //Ruta para mostrar la vista para que el administrador apruebe rechace o pida una modificacion del formulario pyme
 router.get('/admin/emprendimiento/:id_formulario', (req, res)=>{//poner el nombre que creee el andres de la vista
     const id_formulario = req.params.id_formulario;
