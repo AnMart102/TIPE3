@@ -5,77 +5,197 @@
     padding-right: 5px;
 }
 
+#contenedor-pagina{
+
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 #navbar{
-    background-color: beige;
-    height: 80px;
-
-}
-
-#navbar .container-fluid{
-    background-color: beige;
-        
-}
-
-#navbar .container-fluid .row {
-    height: 70px;
-}
-
-#navbar .container-fluid .row .col-navbar{
-    padding-top: 20px;
-    border-right: 1px solid #9E9E9E;
-}
-
-#navbar .container-fluid .row .col-navbar a{
-    color:black;
-}
-
-#iniciar-sesion-buttom{
-
-    background-color: black;
-    border: 1px solid beige;
-    color:beige;
-    
-    font-weight: 400;
-    text-align: center;
-    width:150px;
-    height: 30px;
-}
-
-#login{
-    background-color: beige;
+    background-color: #97d700;
+    height: 100px;
     display: flex;
-
-    height:500px;
-    margin-top: 15px;
-    padding-top: 80px;
-    padding-left: 100px;
 }
 
-#titulo-login{
+@media (min-width: 770px){
+    #navbar-android{
+        display: none;
+    }
+    .opciones-menu{
+        display:none;
+    }
 
-    height:55px;
-    width:90%;
-    border-bottom: 1px solid #9E9E9E;
+    #inicio{
+        width: 20%;
+        padding-top: 30px;
+    }
+    #emprendimientos{
+        width: 35%;
+        padding-top: 30px;
+    }
+    #promocionar{
+        width: 40%;
+        padding-top: 15px;
+        padding-left: 40px;
+    }
+    .opciones-nav{
+        padding-left: 40px;
+    }
+    .opciones-nav a{
+        color:white;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    #div-iniciar-sesion{
+        width:28%;
+        padding-top: 30px;
+    }
+    #iniciar-sesion-buttom{
+        background-color:#EF3340;
+        border: 1px solid #97d700;
+        text-align: center;
+        margin-top: 30px;
+        width:150px;
+        height: 30px;
+        margin:0 auto;   
+    }
+    #iniciar-sesion-buttom a{
+        color:white;
+        text-decoration: none;
+    }
+
+    #login{
+        background-color: beige;
+        height:500px;
+        padding-top: 80px;
+    }
+    
+    #titulo-login{
+    
+        height:55px;
+        width:90%;
+        border-bottom: 1px solid #9E9E9E;
+    }
+    
+    #formulario{  
+        height: 300px;
+        width:700px;
+        padding-top: 40px;
+        margin:0 auto;
+        display: flex;
+    }
+    #formulario-input{
+        width: 30%;
+        height: 100%;
+    }
+    #formulario-botones{
+        width: 70%;
+        height: 100%;
+        padding-left: 40px;
+        padding-top: 50px;
+    }
+    
+    .formulario-text{
+        height: 70px;
+        width:200px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}
+@media (max-width: 770px){
+    #navbar-android{
+        width: 100%;
+        height:65px;
+        background-color: #97d700;
+        display:block;
+    }
+    .opciones-menu{
+        background-color:#EF3340;
+        height: 0px;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        transition:all 300ms cubic-bezier(0.0785, 0.135, 0.15, 0.86);
+    }
+    .opciones-menu a {
+        text-decoration: none;
+        color:white;
+    }
+    .opciones-menu a li{
+        list-style: none;
+        margin-bottom: 20px;
+    }
+    #icono-desplegable{
+        width:80px;
+        height:100%;
+        background-color: #97d700;
+        text-align: center;
+        color:white;
+        font-size: 40px;
+    }
+    #icono-desplegable i{
+        cursor: pointer;
+    }
+    #navbar{
+        display:none;
+    }
+
+    #login{
+        background-color: beige;
+        height:700px;
+        padding-top: 80px;
+    }
+    
+    #titulo-login{
+    
+        height:55px;
+        width:90%;
+        border-bottom: 1px solid #9E9E9E;
+        text-align: center;
+    }
+    
+    #formulario{  
+        height: 300px;
+        width:100%;
+        padding-top: 40px;
+        margin:0 auto;
+    }
+    #formulario-input{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .input-login{
+        width:100%;
+        height: 50%;
+    }
+    #formulario-botones{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    
+    .formulario-text{
+        height: 70px;
+        width:200px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
 }
 
-#formulario{  
-    height: 300px;
-    padding-top: 40px;
-}
-
-.formulario-text{
-    height: 70px;
-    width:200px;
-    margin-bottom: 40px;
-    text-align: center;
-}
 
 .btn{
-    height: 70px;
-    width:200px;
-
-    margin-left: 100px;
-    background-color: black;
+    height: 40px;
+    width:100px;
+    background-color:#EF3340;
     color: white;
 }
 
+@media (max-width: 770px){
+    .nav_side{
+        height: 200px;
+        padding-top:20px;
+    }
+}

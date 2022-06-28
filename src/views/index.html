@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Custom CSS -->
 
-    <link rel="stylesheet" href="/css/index.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/index.css" type="text/css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <title>Index</title>
   </head>
@@ -64,7 +64,7 @@
         
         <div class="rowCategorias">
           <% for(var i = 0; i < datos2.length; i++){ %>
-          <div class="categoria"><a href="/<%= datos2[i].id_categorias %>"><div class="categoria"></div></a><p><%= datos2[i].categorias %></p></div>
+          <div class="categoria"><a href="/<%= datos2[i].id_categorias %>"><p><%= datos2[i].categorias %></p><div class="categoria"></div></a></div>
           <% } %>
         </div>
 

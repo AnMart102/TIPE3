@@ -2,6 +2,7 @@
 
 #navbar{
     height: 80px;
+    background-color:#97d700;
 }
 
 
@@ -14,7 +15,7 @@
 }
 
 #navbar .container-fluid .row .col-navbar a{
-    color:black;
+    color:white;
 }
 
 #iniciar-sesion-buttom{
@@ -32,11 +33,105 @@
     color:beige;
 }
 
-#descripcion-pyme{
-    height: 700px;
-    width: 90%;
-    margin:0 auto;
-    display:flex;
+
+@media (min-width: 1090px){
+    #descripcion-pyme{
+        height: 700px;
+        width: 90%;
+        margin:0 auto;
+        display:flex;
+    }
+    #navbar-android{
+        display: none;
+    }
+    .opciones-menu{
+        display:none;
+    }
+
+    #inicio{
+        width: 20%;
+        padding-top: 30px;
+    }
+    #emprendimientos{
+        width: 35%;
+        padding-top: 30px;
+    }
+    #promocionar{
+        width: 40%;
+        padding-top: 15px;
+        padding-left: 40px;
+    }
+    .opciones-nav{
+        padding-left: 40px;
+    }
+    .opciones-nav a{
+        color:white;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    #div-iniciar-sesion{
+        width:28%;
+        padding-top: 30px;
+    }
+    #iniciar-sesion-buttom{
+        background-color:#EF3340;
+        border: 1px solid #97d700;
+        text-align: center;
+        margin-top: 30px;
+        width:150px;
+        height: 30px;
+        margin:0 auto;   
+    }
+    #iniciar-sesion-buttom a{
+        color:white;
+        text-decoration: none;
+    }
+}
+
+
+@media (max-width: 1090px){
+    #descripcion-pyme{
+        height: 500px;
+        width: 880px;
+        margin:0 auto;
+    }
+    #navbar-android{
+        width: 100%;
+        height:65px;
+        background-color: #97d700;
+        display:block;
+    }
+    .opciones-menu{
+        background-color:#EF3340;
+        height: 0px;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        transition:all 300ms cubic-bezier(0.0785, 0.135, 0.15, 0.86);
+    }
+    .opciones-menu a {
+        text-decoration: none;
+        color:white;
+    }
+    .opciones-menu a li{
+        list-style: none;
+        margin-bottom: 20px;
+    }
+    #icono-desplegable{
+        width:80px;
+        height:100%;
+        background-color: #97d700;
+        text-align: center;
+        color:white;
+        font-size: 40px;
+    }
+    #icono-desplegable i{
+        cursor: pointer;
+    }
+    #navbar{
+        display:none;
+    }
+
 }
 
 #fotos-perfil{
@@ -141,4 +236,11 @@
 .boton-redireccion a,.boton-redireccion-pagina a{
     text-decoration: none;
     color:white;
+}
+/*javascript*/
+@media (max-width: 1090px){
+    .nav_side{
+        height: 200px;
+        padding-top:20px;
+    }
 }
