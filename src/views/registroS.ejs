@@ -43,12 +43,13 @@
           <h2>Emprendedor ingrese sus datos</h2>
         </div>
 
-        <form id="formulario" class="container-fluid" action="/save" method="post">
+        <form id="formulario" class="container-fluid" action="/registroS" method="post">
 
           <div class="row">
-
+            <input type="hidden"  name="id_categorias" value='<%=InfoID[0].id_categorias%>'>
+            <input type="hidden"  name="Estado_subcat" value='1'>
             <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="subcategoria" placeholder="Agregar subcategoria">
+              <INPUT class="datos-formulario" type="text" name="sub_cat" placeholder="Agregar subcategoria">
             </div>
           </div>
 

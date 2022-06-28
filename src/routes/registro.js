@@ -110,11 +110,24 @@ router.post('/registroC',(req,res)=>{
 });
 
 router.get('/registroS',(req,res)=>{
-    conn.query('SELECT id_categoria FROM formulario_solicitud ORDER BY id_categoria DESC LIMIT 1', (err,resp,campos) => {
+    conn.query('SELECT id_categorias FROM categorias ORDER BY id_formulario DESC LIMIT 1', (err,resp,campos) => {
         console.log(resp);
         res.render('registroS.ejs',{
         InfoID : resp
         });
     });
+});
+router.post('/registroS',(req,res)=>{
+    const sub_cat = req.body.sub_cat;
+    const id_categorias = req.body.id_categorias;
+    const Estado_subcat = req.body.Estado_subcat;
+    conn.query('INSERT INTO subcat SET ?', {sub_cat:sub_cat,Estado_subcat:Estado_subcat,id_categorias:id_categorias}, (error,results)=>{
+    if(error){
+        console.log(error);
+    }else{
+        res.redirect('/');
+    } 
+})
+
 });
 module.exports = router;
