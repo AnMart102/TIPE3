@@ -1,31 +1,9 @@
-
-
 let usuarios_conectados = 0;
 var visitas = 0;
 let visitas_dia = moment.hour();
 let visitas_al_mes = moment.month();
 let visitas_semana = moment.weekday();
 let bandera = moment.hour(0);
-var visitas_ene = 0;
-var visitas_feb = 0;
-var visitas_mar = 0;
-var visitas_abr = 0;
-var visitas_may = 0;
-var visitas_jun = 0;
-var visitas_jul = 0;
-var visitas_ago = 0;
-var visitas_sep = 0;
-var visitas_oct = 0;
-var visitas_nov = 0;
-var visitas_dic = 0;
-var visitas_lun = 0;
-var visitas_mrt = 0;
-var visitas_mie = 0;
-var visitas_jue = 0;
-var visitas_vie = 0;
-var visitas_sab = 0;
-var visitas_dom = 0;
-
 
 /*try {
   visitas = 0 | Number(fs.readFileSync("visitas.txt", "utf8"));
@@ -38,7 +16,8 @@ module.exports = function (io, app) {
   io.on("connection", (socket) => {
     console.log("Nuevo usuario conectado " + socket.id);
     usuarios_conectados++;
-    if ((visitas_dia = bandera)) {
+    visitas ++;
+    /*if ((visitas_dia = bandera)) {
         visitas = 0;
      }
     else{
@@ -127,7 +106,7 @@ module.exports = function (io, app) {
           break;
         default:
           console.log('error');
-      }
+      }*/
       
     escribirVisitas();
     io.emit("actualizar", usuarios_conectados, visitas);
@@ -139,34 +118,4 @@ module.exports = function (io, app) {
     });
   });
 };
-module.exports ={visitas_ene};
-module.exports ={visitas_feb};
-module.exports ={visitas_mar};
-module.exports ={visitas_may};
-module.exports ={visitas_jun};
-module.exports ={visitas_jul};
-module.exports ={visitas_ago};
-module.exports ={visitas_sep};
-module.exports ={visitas_oct};
-module.exports ={visitas_abr};
-module.exports ={visitas_nov};
-module.exports ={visitas_dic};
-module.exports ={visitas_lun};
-module.exports ={visitas_mrt};
-module.exports ={visitas_mie};
-module.exports ={visitas_jue};
-module.exports ={visitas_vie};
-module.exports ={visitas_sab};
-module.exports ={visitas_dom};
-module.exports ={visitas};
-
-document.getElementById('valor').innerHTML = visitas;
-document.getElementById('valor2').innerHTML = visitas_dia;
-document.getElementById('valor3').innerHTML = visitas_al_mes;
-/*function escribirVisitas() {
-  try {
-    fs.writeFileSync("visitas.txt", visitas + "");
-  } catch (err) {
-    console.error(err);
-  }
-}*/
+document.getElementById('nuevasvisitas').innerHTML = visitas;
