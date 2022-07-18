@@ -129,6 +129,8 @@ module.exports = function (io, app) {
           console.log('error');
       }
       
+      visitas_semana = visitas_lun + visitas_mrt + visitas_mie + visitas_jue + visitas_vie + visitas_sab + visitas_dom;
+      
     escribirVisitas();
     io.emit("actualizar", usuarios_conectados, visitas);
 
@@ -160,8 +162,8 @@ module.exports ={visitas_sab};
 module.exports ={visitas_dom};
 module.exports ={visitas};
 
-document.getElementById('valor').innerHTML = visitas;
-document.getElementById('valor2').innerHTML = visitas_dia;
+document.getElementById('valor').innerHTML = visitas_dia;
+document.getElementById('valor2').innerHTML = visitas_semana;
 document.getElementById('valor3').innerHTML = visitas_al_mes;
 /*function escribirVisitas() {
   try {

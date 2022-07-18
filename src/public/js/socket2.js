@@ -4,6 +4,13 @@ let visitas_dia = moment.hour();
 let visitas_al_mes = moment.month();
 let visitas_semana = moment.weekday();
 let bandera = moment.hour(0);
+var visitas_lun = 0;
+var visitas_mrt = 0;
+var visitas_mie = 0;
+var visitas_jue = 0;
+var visitas_vie = 0;
+var visitas_sab = 0;
+var visitas_dom = 0;
 
 /*try {
   visitas = 0 | Number(fs.readFileSync("visitas.txt", "utf8"));
@@ -74,7 +81,7 @@ module.exports = function (io, app) {
           break;
         default:
           console.log('error');
-      }
+      }*/
       switch (visitas_semana) {
         case 1:
           console.log('lunes');
@@ -106,7 +113,8 @@ module.exports = function (io, app) {
           break;
         default:
           console.log('error');
-      }*/
+      }
+      visitas_semana = visitas_lun + visitas_mrt + visitas_mie + visitas_jue + visitas_vie + visitas_sab + visitas_dom;
       
     escribirVisitas();
     io.emit("actualizar", usuarios_conectados, visitas);
@@ -118,4 +126,4 @@ module.exports = function (io, app) {
     });
   });
 };
-document.getElementById('nuevasvisitas').innerHTML = visitas;
+document.getElementById('nuevasvisitas').innerHTML = visitas_semana;
