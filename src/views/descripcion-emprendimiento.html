@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Custom CSS -->
 
-    <link rel="stylesheet" href="/css/descripcion-emprendimiento.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/descripcion-emprendimiento.css" type="text/css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <title>Index</title>
   </head>
@@ -33,7 +33,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-3 col-navbar">
-                <H1>LOGO</H1>
+                <img src="../public/img/logo-municipalidad2.png" alt="">
               </div>
               <div class="col-2 col-navbar">
                 <a href="#">inicio</a>
@@ -53,78 +53,78 @@
           </div>
       </nav>
       <div id="descripcion-pyme">
-            <div id="fotos-perfil">
-                <div id="imagen-principal">
+        <div id="fotos-perfil">
+          <div id="imagen-principal">
 
-                </div>
-                <div id="imagenes-secundarias">
-                    <div class="imagen-secundaria">
-                    </div>
-                    <div class="imagen-secundaria">
-                    </div>
-                    <div class="imagen-secundaria">
-                    </div>
-                    <div class="imagen-secundaria">
-                    </div>
-
-                </div>
-
-
+          </div>
+          <div id="imagenes-secundarias">
+            <div class="imagen-secundaria">
             </div>
-            <div id="descripcion-perfil">
-              <div id="nombre-emprendimiento">
-                  <h2><%= pyme[0].Nombre_pyme %></h2>
-              </div>
-              <div id="categorias-emprendimiento">
-                  <div class="categoria">
-                    <p><%= pyme[0].categorias %></p>
-                  </div>
-                  <div class="categoria">
-                    <p>tag</p>
-                  </div> 
-                  <div class="categoria">
-                    <p>tag</p>
-                  </div>                    
-                </div>
-              <div id="datos-emprendimiento">
-                <div class="dato">
-                  <ul>Direccion</ul>
-                  <ul>Fanpage de instagram</ul> 
-                  <ul>Tienda virtual y/o fisica</ul>
-                  <ul>Correo</ul>
-                  <ul>numero de Telefono</ul> 
+            <div class="imagen-secundaria">
+            </div>
+            <div class="imagen-secundaria">
+            </div>
+            <div class="imagen-secundaria">
+            </div>
+
+          </div>
+
+
+        </div>
+        <div id="descripcion-perfil">
+          <div id="nombre-emprendimiento">
+            <h2><%= pyme[0].Nombre_pyme %></h2>
+          </div>
+          <div id="categorias-emprendimiento">
+            <div class="categoria">
+              <p><%= pyme[0].categorias %></p>
+            </div>
+            <div class="categoria">
+              <p>tag</p>
+            </div> 
+            <div class="categoria">
+              <p>tag</p>
+            </div>                    
+          </div>
+          <div id="datos-emprendimiento">
+            <div id="descripcion-dato">
+              <ul>Direccion</ul>
+              <ul>Numero direccion</ul> 
+              <ul>Tienda virtual y/o fisica</ul>
+              <ul>Correo</ul>
+              <ul>numero de Telefono</ul> 
                   
-                </div>
-                <div class="dato">
-                  <ul><%= pyme[0].calle  %> <%= pyme[0].numero %></ul>
-                  <ul><%= pyme[0].Instagram %>aa</ul>                  
-                  <ul><%= pyme[0].tipoTienda %></ul>
-                  <ul><%= pyme[0].Correo %></ul>
-                  <ul><%= pyme[0].Telefono %></ul>
-                                                   
-                </div>                                                                  
-              </div>
-              <div id="descripcion-emprendimiento">
-                <p><%= pyme[0].Descripcion %></p>
-              </div>
-              
-              <div id="botones-redireccion">
-                <div class="boton-redireccion">
-                  <a href="<%= pyme[0].Whatsapp %>">Whatsapp</a>
-                </div>
-                <div class="boton-redireccion">
-                  <a href="<%= pyme[0].Instagram %>">Instagram</a>
-                </div>
-                <div class="boton-redireccion">
-                  <a href="<%= pyme[0].Facebook %>">Facebook</a>
-                </div>
-              </div>
-              <div id="botones-filtro">
-                <div class="boton-redireccion-pagina">
-                  <a href="<%= pyme[0].Sitio_web %>">Pagina web</a>
-                </div>
-              </div>
             </div>
+            <div id="dato">
+              <ul><%= pyme[0].calle  %></ul>
+              <ul><%= pyme[0].numero %></ul>                  
+              <ul><%= pyme[0].tipoTienda %></ul>
+              <ul><%= pyme[0].Correo %></ul>
+              <ul><%= pyme[0].Telefono %></ul>
+                                                   
+            </div>                                                                  
+          </div>
+          <div id="descripcion-emprendimiento">
+            <p><%= pyme[0].Descripcion %></p>
+          </div>
+              
+          <div id="botones-redireccion">
+            <div class="boton-redireccion">
+              <a href="<%= pyme[0].Whatsapp %>">Whatsapp</a>
+            </div>
+            <div class="boton-redireccion">
+              <a href="<%= pyme[0].Instagram %>">Instagram</a>
+            </div>
+            <div class="boton-redireccion">
+              <a href="<%= pyme[0].Facebook %>">Facebook</a>
+            </div>
+          </div>
+          <div id="botones-filtro">
+            <div class="boton-redireccion-pagina">
+              <a href="<%= pyme[0].Sitio_web %>">Pagina web</a>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
