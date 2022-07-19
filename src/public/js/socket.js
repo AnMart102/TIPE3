@@ -161,10 +161,11 @@ module.exports ={visitas_vie};
 module.exports ={visitas_sab};
 module.exports ={visitas_dom};
 module.exports ={visitas};
-
-document.getElementById('valor').innerHTML = visitas_dia;
+window.onload = function(){
+document.getElementById('valor').innerHTML = "<h2> "+ visitas_dia + "</h2>";
 document.getElementById('valor2').innerHTML = visitas_semana;
 document.getElementById('valor3').innerHTML = visitas_al_mes;
+}
 /*function escribirVisitas() {
   try {
     fs.writeFileSync("visitas.txt", visitas + "");
