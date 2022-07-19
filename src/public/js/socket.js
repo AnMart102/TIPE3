@@ -1,10 +1,8 @@
-
-
 let usuarios_conectados = 0;
 var visitas = 0;
-let visitas_dia = moment.hour();
-let visitas_al_mes = moment.month();
-let visitas_semana = moment.weekday();
+var visitas_dia = moment.hour();
+var visitas_al_mes = moment.month();
+var visitas_semana = moment.weekday();
 let bandera = moment.hour(0);
 var visitas_ene = 0;
 var visitas_feb = 0;
@@ -162,7 +160,7 @@ module.exports ={visitas_sab};
 module.exports ={visitas_dom};
 module.exports ={visitas};
 window.onload = function(){
-document.getElementById('valor').innerHTML = "<h2> "+ visitas_dia + "</h2>";
+document.getElementById('valor').innerHTML = visitas_dia;
 document.getElementById('valor2').innerHTML = visitas_semana;
 document.getElementById('valor3').innerHTML = visitas_al_mes;
 }
