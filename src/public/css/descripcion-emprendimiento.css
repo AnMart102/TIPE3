@@ -18,6 +18,7 @@
     color:white;
 }
 
+
 #iniciar-sesion-buttom{
 
     background-color: black;
@@ -75,6 +76,7 @@
     }
     .opciones-nav{
         padding-left: 40px;
+        padding-top:10px;
     }
     .opciones-nav a{
         color:white;
@@ -239,8 +241,8 @@
 .boton-redireccion,.boton-redireccion-pagina{
     height: 40px;
     width:150px;
-    background-color: rgb(67, 67, 68);
-    border: solid 1px rgb(67, 67, 68); 
+    background-color: rgb(31, 66, 82);
+    border: solid 1px rgb(31, 66, 82);
     margin: 0 auto;
     text-align: center;
     padding-top: 7px;
