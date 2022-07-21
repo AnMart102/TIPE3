@@ -202,7 +202,27 @@
 #emprendimientos-locales .row .col-emprendimientos-locales{
     padding-top: 20px;
 }
+#footer-index{
+    width: 100%;
+    height:150px;
+    border-top: 1px solid rgb(134, 134, 134);
+    
+}
+#footer-index{
+    padding-top:60px;
+    padding-left:60px;
 
+}
+#formulario-satisfaccion{
+    background-color:#EF3340;
+    border: 1px solid #97d700;
+    text-align: center;
+    width:300px;
+    height: 30px;  
+}
+#formulario-satisfaccion a{
+    color:white;
+}
 /*javascript*/
 @media (max-width: 770px){
     .nav_side{
