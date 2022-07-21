@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../public/css/registro.css" type="text/css">
+    <link rel="stylesheet" href="/css/registro.css" type="text/css">
     <title>Index</title>
   </head>
   <body>
@@ -43,81 +43,39 @@
           <h2>Emprendedor ingrese sus datos</h2>
         </div>
         <div class="titulo-formulario">
-          <h2>Datos pyme</h2>
+          <h2>Direccion</h2>
         </div>
 
-        <form id="formulario" class="container-fluid" action="/registroF" method="post">
+        <form id="formulario" class="container-fluid" action="/registroD" method="post">
 
           <div class="row">
             <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="Nombre_pyme" placeholder="Nombre pyme">
+              <INPUT class="datos-formulario" type="text" name="calle" placeholder="Calle">
             </div>
             <div class="col-3">
-              <select name="tipoTienda" class="datos-formulario" aria-placeholder="Empresa registrada(si/no)">
-                <option  value="" disabled selected hidden>Tipo Tienda</option>
-                <option value="1">Tienda fisica</option>
-                <option value="2">Tienda virtual</option>
-                <option value="3">Ambas</option>
-              </select>
+              <INPUT class="datos-formulario" type="text" name="numeroC" placeholder="Numero">
             </div>
             <div class="col-3">
-              <select name="Empresa_registrada" class="datos-formulario" aria-placeholder="Empresa registrada(si/no)">
-                <option  value="" disabled selected hidden>Empresa registrada</option>
-                <option value="1">Si</option>
-                <option value="2">No</option>
-              </select>
+              <div class="form-group">
+                <select  name="CasaDepto" required class="form-control"  placeholder="Probabilidad de ocurrencia del riesgo"> 
+                  <option value="" disabled selected hidden>Casa/Depto</option>
+                  <option value="1">Casa</option>
+                  <option value="2">Depto</option>
+                </select>
             </div>
-          </div>
-
-          <div class="row">
-            <div class="col-3">
-              <select name="Medio_pago" class="datos-formulario" aria-placeholder="Empresa registrada(si/no)">
-                <option value="" disabled selected hidden>medio de pago</option>
-                <option value="1">Efectivo</option>
-                <option value="2">Tarjetas</option>
-                <option value="3">Transferencia</option>
-              </select>
-            </div>
-            <div class="col-3">
-              <select name="Medio_entrega" class="datos-formulario" aria-placeholder="Medio entrega">
-                <option  value="" disabled selected hidden>Medio entrega</option>
-                <option value="1">En tienda</option>
-                <option value="2">Delivery</option>
-                <option value="3">Ambas</option>
-              </select>
-            </div>
-            <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="Horario" placeholder="Horario">
             </div>
           </div>
           <div class="row">
             <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="Sitio_web" placeholder="Sitio web">
-            </div>
-
-            <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="Facebook" placeholder="Facebook">
+              <INPUT class="datos-formulario" type="text" name="localidad" placeholder="Localidad">
             </div>
             <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="Instagram" placeholder="Instagram">
+              <INPUT class="datos-formulario" type="text" name="PoblaVilla" placeholder="Poblacion/Villa">
             </div>
           </div>
-          <div class="row">
-            <div class="col-3">
-              <input type="hidden"  name="Rut" value='<%=InfoRut[0].Rut%>'>
-            </div>
-
-            <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="Whatsapp" placeholder="Whatsapp">
-            </div>
-            <div class="col-3">
-              
-            </div>
-          </div>
+          <input type="hidden"  name="Rut" value='<%=Info[0].Rut%>'>
 
 
-
-          <INPUT id="descripcion" type="text" name="Descripcion" placeholder="descripcion">
           <div id="botones-enviar-formulario">
             <input id="siguiente" type="submit" class="btn btn-primary">
             <a id="siguiente" href="https://api.whatsapp.com/send?phone=967691029&text=Hola,%20necesito%20ayuda%20en%20el%20formulario%20de%20inscripci%C3%B3n.">Ayuda</a>

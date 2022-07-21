@@ -1,8 +1,8 @@
 let usuarios_conectados = 0;
 var visitas = 0;
-var visitas_dia = moment.hour();
-var visitas_al_mes = moment.month();
-var visitas_semana = moment.weekday();
+let visitas_dia = moment.hour();
+let visitas_al_mes = moment.month();
+let visitas_semana = moment.weekday();
 let bandera = moment.hour(0);
 var visitas_ene = 0;
 var visitas_feb = 0;
@@ -139,6 +139,97 @@ module.exports = function (io, app) {
     });
   });
 };
+window.onload = function(){
+  var visitas3 = 0;
+  var visitas2 = 0;
+  switch (visitas_al_mes) {
+    case 0:
+      console.log('enero');
+      visitas3 = visitas_ene;
+      break;
+    case 1:
+      console.log('febrero');
+      visitas3 = visitas_feb;
+      break;
+    case 2:
+      console.log('marzo');
+      visitas3 = visitas_mar;
+      break;
+    case 3:
+      console.log('abril');
+      visitas3 = visitas_abr;
+      break;
+    case 4:
+      console.log('mayo');
+      visitas3 = visitas_may;
+      break;
+    case 5:
+      console.log('junio');
+      visitas3 = visitas_jun;
+      break;
+    case 6:
+      console.log('julio');
+      visitas3 = visitas_jul;
+      break;
+    case 7:
+      console.log('agosto');
+      visitas3 = visitas_ago;
+      break;
+    case 8:
+      console.log('septiembre');
+      visitas3 = visitas_sep;
+      break;
+    case 9:
+      console.log('octubre');
+      visitas3 = visitas_oct;
+      break;
+    case 10:
+      console.log('noviembre');
+      visitas3 = visitas_nov;
+      break;
+    case 11:
+      console.log('diciembre');
+      visitas3 = visitas_dic;
+      break;
+    default:
+      console.log('error');
+  }
+  switch (visitas_semana) {
+    case 1:
+      console.log('lunes');
+      visitas2 = visitas_lun;
+      break;
+    case 2:
+      console.log('martes');
+      visitas2 = visitas_mrt;
+      break;
+    case 3:
+      console.log('miercoles');
+      visitas2 = visitas_mie;
+      break;
+    case 4:
+      console.log('jueves');
+      visitas2 = visitas_jue;
+      break;
+    case 5:
+      console.log('viernes');
+      visitas2 = visitas_vie;
+      break;
+    case 6:
+      console.log('sabado');
+      visitas2 = visitas_sab;
+      break;
+    case 7:
+      console.log('domingo');
+      visitas2 = visitas_dom;
+      break;
+    default:
+      console.log('error');
+  }
+  document.getElementById('valor').innerHTML = visitas;
+  document.getElementById('valor2').innerHTML = visitas2;
+  document.getElementById('valor3').innerHTML = visitas3;
+}
 module.exports ={visitas_ene};
 module.exports ={visitas_feb};
 module.exports ={visitas_mar};
@@ -159,11 +250,6 @@ module.exports ={visitas_vie};
 module.exports ={visitas_sab};
 module.exports ={visitas_dom};
 module.exports ={visitas};
-window.onload = function(){
-document.getElementById('valor').innerHTML = visitas_dia;
-document.getElementById('valor2').innerHTML = visitas_semana;
-document.getElementById('valor3').innerHTML = visitas_al_mes;
-}
 /*function escribirVisitas() {
   try {
     fs.writeFileSync("visitas.txt", visitas + "");

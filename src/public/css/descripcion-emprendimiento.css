@@ -34,25 +34,13 @@
     color:beige;
 }
 
+
 @media (min-width: 1090px){
-    #fotos-perfil{
-        height: 60%;
-        width: 440px;
-        border: solid 2px rgb(197, 190, 190);
-        margin: 0 auto;
-    }
-    
-    #descripcion-perfil{
-        height: 100%;
-        width: 50%;
-        margin:0 auto;
-    }
     #descripcion-pyme{
         height: 700px;
-        width: 100%;
+        width: 90%;
         margin:0 auto;
         display:flex;
-        margin-top:40px;
     }
     #navbar-android{
         display: none;
@@ -104,24 +92,10 @@
 
 
 @media (max-width: 1090px){
-    #fotos-perfil{
-        height: 80%;
-        width: 440px;
-        border: solid 2px rgb(197, 190, 190);
-        margin: 0 auto;
-    }
-    
-    #descripcion-perfil{
-        height: 100%;
-        width: 100%;
-        margin:0 auto;
-    }
-    
     #descripcion-pyme{
         height: 500px;
-        width: 100%;
+        width: 880px;
         margin:0 auto;
-        margin-top:40px;
     }
     #navbar-android{
         width: 100%;
@@ -162,8 +136,14 @@
 
 }
 
+#fotos-perfil{
+    height: 80%;
+    width: 50%;
+    border: solid 2px rgb(197, 190, 190);
+}
 
 #imagen-principal{
+
     height: 70%;
     background-color: beige;
 }
@@ -181,6 +161,12 @@
     border: solid 3px white;
 }
 
+
+#descripcion-perfil{
+    height: 100%;
+    width: 50%;
+}
+
 #nombre-emprendimiento{
     height: 60px;
     width: 100%;
@@ -194,6 +180,7 @@
     padding-top: 20px;
     display: flex;
     margin: 0 auto;
+    padding-left: 80px;
     border-bottom: solid 1px rgb(122, 117, 117);
 }
 
@@ -203,26 +190,23 @@
     background-color: rgb(31, 66, 82);
     color:white;
     text-align:center;
-    margin:0 auto;
+    margin-left: 10px;
 
 }
 
 #datos-emprendimiento{
-    height: 250px;
-    width: 100%;
+    height: 230px;
+    width: 80%;
     padding-top: 20px;
     display: flex;
     margin: 0 auto;
     border-bottom: solid 1px rgb(122, 117, 117);
     display: flex;
+    
 }
-#descripcion-dato{
+.dato{
     height: 100%;
-    width: 35%;
-}
-#dato{
-    height: 100%;
-    width: 60%;
+    width: 50%;
 }
 #descripcion-emprendimiento{
     height: 170px;
