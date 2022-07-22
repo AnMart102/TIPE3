@@ -178,7 +178,7 @@
     padding-top: 20px;
 }
 #categorias-emprendimiento{
-    height: 60px;
+    height: 100px;
     width: 80%;
     text-align:center;
     padding-top: 20px;
@@ -189,7 +189,7 @@
 }
 
 .categoria{
-    height: 30px;
+    height: 50px;
     width: 100px;
     background-color: rgb(31, 66, 82);
     color:white;
