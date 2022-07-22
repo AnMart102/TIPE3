@@ -7,73 +7,70 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/registro.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/registro.css" type="text/css">
     <title>Index</title>
   </head>
   <body>
+    <nav id="navbar">
+      <div id="inicio" class="opciones-nav">
+        <a href="#">Inicio</a>
+      </div>
+      <div id="emprendimientos" class="opciones-nav">
+        <a href="#">Emprendimientos</a>
+      </div>
+      <div id="promocionar" class="opciones-nav">
+        <a href="/registro">Quiero promocionar mi<br> emprendimiento</a>
+      </div>
+      <div id="div-iniciar-sesion">
+        <div id="iniciar-sesion-buttom">
+          <a href="/login">Iniciar Sesion</a>
+        </div>
+      </div>
+    </nav>
     <div id="contenedor-pagina">
-      <nav id="navbar">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-3 col-navbar">
-                <H1>LOGO</H1>
-              </div>
-              <div class="col-2 col-navbar">
-                <a href="/">inicio</a>
-              </div>
-              <div class="col-2 col-navbar">
-                <a href="/">emprendimientos</a>
-              </div>
-              <div class="col-3 col-navbar">
-                <a href="#">ya está registrado?</a>
-              </div>
-              <div class="col-2 col-navbar">
-                <div id="iniciar-sesion-buttom">
-                  <a href="/login">Iniciar Sesion</a>
-                </div>
-              </div>
-            </div>
-          </div>
-      </nav>
       <div id="registro">
         <div id="titulo-registro">
           <h1>Registro</h1>
         </div>
         <div class="titulo-formulario">
-          <h2>Emprendedor ingrese sus datos</h2>
+          <h2>aaaEmprendedor ingrese sus datos</h2>
         </div>
         <div class="titulo-formulario">
-          <h2>Direccion</h2>
+          <h2>Datos personales</h2>
         </div>
 
-        <form id="formulario" class="container-fluid" action="/registroD" method="post">
+        <form id="formulario" class="container-fluid" action="/registrou" method="post">
 
           <div class="row">
             <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="calle" placeholder="Calle">
+              <INPUT class="datos-formulario" type="text" name="Rut" placeholder="Rut sin punto y con guion">
             </div>
             <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="numeroC" placeholder="Numero">
+              <INPUT class="datos-formulario" type="text" name="Nombre" placeholder="Primer nombre">
             </div>
             <div class="col-3">
-              <div class="form-group">
-                <select  name="CasaDepto" required class="form-control"  placeholder="Probabilidad de ocurrencia del riesgo"> 
-                  <option value="" disabled selected hidden>Casa/Depto</option>
-                  <option value="1">Casa</option>
-                  <option value="2">Depto</option>
-                </select>
-            </div>
+              <INPUT class="datos-formulario" type="text" name="ApellidoP" placeholder="Apellido paterno">
             </div>
           </div>
           <div class="row">
             <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="localidad" placeholder="Localidad">
+              <INPUT class="datos-formulario" type="text" name="ApellidoM" placeholder="Apellido Materno">
             </div>
             <div class="col-3">
-              <INPUT class="datos-formulario" type="text" name="PoblaVilla" placeholder="Poblacion/Villa">
+              <INPUT class="datos-formulario" type="email" name="Correo" placeholder="Correo">
+            </div>
+            <div class="col-3">
+              <INPUT class="datos-formulario" type="password" name="Contrasena" placeholder="Contrasena">
             </div>
           </div>
-          <input type="hidden"  name="Rut" value='<%=Info[0].Rut%>'>
+          <div class="row">
+            <div class="col-3">
+              <INPUT class="datos-formulario" type="password" name="xdxd" placeholder="Repetir contrasena">
+            </div>
+            <div class="col-3">
+              <INPUT class="datos-formulario" type="text" name="Telefono" placeholder="Celular">
+            </div>
+          </div>
 
 
           <div id="botones-enviar-formulario">
