@@ -18,24 +18,24 @@
       </div>
 
       <div id="opciones-menu">
-        <a href="#">
-          <div class="opcion">
-            <i class="fas fa-search"></i>
-            <h4>Editar perfil</h4>
-          </div>
-        </a>
 
         <a href="">
           <div class="opcion">
-            <i class="fas fa-house"></i>
+            <i class="fa-solid fa-chart-line"></i>
             <h4>Estaisticas</h4>
           </div>
         </a>
-
         <a href="https://api.whatsapp.com/send?phone=967691029&text=Hola,%20necesito%20ayuda%20en%20el%20formulario%20de%20inscripci%C3%B3n.">
           <div class="opcion">
-            <i class="fas fa-gear"></i>
+            <i class="fa-solid fa-circle-question"></i>
             <h4>Encuesta</h4>
+          </div>
+        </a>
+
+        <a href="#">
+          <div class="opcion">
+            <i class="fas fa-gear"></i>
+            <h4>Editar perfil</h4>
           </div>
         </a>
         
@@ -46,10 +46,10 @@
         <div id="usuario">
           <div id="usuario-texto">
             <div id="bloque-usuario-texto">
-              <a class="a1" href="#">Usuario</a>
+              <a id="Administrador" href="#">Usuario</a>
             </div>
             <div id="bloque-usuario-texto">
-              <a class="a2" href="#">Account settings</a>
+              <a id="Account" href="#">Account settings</a>
             </div>
           </div>
           <div id="foto-usuario">
@@ -68,7 +68,7 @@
               <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Apellido 1">
               <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Apellido 2">
               <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Dirección">
-              <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Rut sin punto y con guion">
+              <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Rut sin punto y con guión">
                 <select name="Categorias" class="datos-editar-perfil" aria-placeholder="categorias">
                   <option value="categorias">categorias</option>
                   <option value="categoria1">categoria1</option>
@@ -90,8 +90,8 @@
           </div>
           <INPUT class="datos-editar-perfil" type="tel" name="nombre" placeholder="Numero de celular">
             <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Email">
-            <INPUT class="datos-editar-perfil" type="password" name="nombre" placeholder="Contrasena">
-            <INPUT class="datos-editar-perfil" type="password" name="nombre" placeholder="Repetir contrasena">
+            <INPUT class="datos-editar-perfil" type="password" name="nombre" placeholder="Contraseña">
+            <INPUT class="datos-editar-perfil" type="password" name="nombre" placeholder="Repetir contraseña">
             <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Nombre pyme">
             <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Agregar subcategorias">
               <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Antiguedad">
@@ -126,9 +126,7 @@
             </div>
           </div>
           <div id="boton-seleccionar-imagen">
-            <a href="#">              
-              <p>seleccionar imagen</p>
-            </a>
+            <button class="subirArchivo">Subir imágenes</button>
           </div>
         </div>
         
@@ -162,9 +160,9 @@
         </div>
         <div id="botones-elementos-imagenes">
           <div id="adjuntar-archivo">
-            <button type="button" id="adjuntar-archivo-buttom">
-              <a href="#">adjuntar archivo(s)</a>
-            </button>
+            <div id="adjuntar-archivo-buttom">
+              <button class="subirArchivo">Subir imágenes</button>
+            </div>
           </div>
           <div id="archivos-para-adjuntar">
             <div class="elementos-adjuntos">
@@ -187,12 +185,8 @@
 
         </div>
         <div id="botones-enviar-formulario">
-          <button id="registrarse">
-            <a href="#">Editar</a>
-          </button>
-          <button id="cancelar">
-            <a href="#">cancelar</a>
-          </button>
+          <button type="submit" id="registrarse">Editar</button>
+          <button id="cancelar">cancelar</button>
           
         </div>
     </div> 

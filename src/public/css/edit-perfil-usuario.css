@@ -14,7 +14,7 @@
 
 }
 #div-menu-icono{
-    background-color: black;
+    background-color:#EF3340;
     width: 100%;
     height: 90px;
     text-align: center;
@@ -31,11 +31,11 @@
 #opciones-menu{
     padding-top:20px;
     padding-left:30px;
-    background-color: beige;
+    background-color:#EF3340;
     height: 100%;
     position:relative;
     overflow:hidden;
-    border-right:30px solid beige;
+    border-right:30px solid #EF3340;
     
 }
 
@@ -49,7 +49,7 @@
 }
 
 #opciones-menu a{
-    color:black;
+    color:white;
 }
 
 
@@ -71,7 +71,7 @@
     width:100%;
     height: 90px;
     display:flex;
-    background-color: white;
+    background-color: #97d700;
     border-bottom: 2px solid #C3C3C3;
 }
 
@@ -92,15 +92,14 @@
     height: 100%;
 }
 
-#usuario-texto .a1, #usuario-texto .a2{
+#usuario-texto #Administrador, #usuario-texto #Account{
     font-size: 30px;
-    color:#5c5959;
+    color:white;
     text-decoration:none;
 }
-#usuario-texto .a2{
+#usuario-texto #Account{
     font-size: 20px;
 }
-
 #foto-usuario{
     padding-left: 10px;
     padding-top: 10px;
@@ -112,7 +111,7 @@
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    border: solid 1px black;
+    border: solid 1px white;
     cursor:pointer;
 }
 
@@ -179,15 +178,17 @@
 #boton-seleccionar-imagen{
     height: 60px;
     width:300px;
-    background-color: beige;
     text-align: center;
-    padding-top:20px;
     margin-top: 30px;
 }
-#boton-seleccionar-imagen a{
-    text-decoration: none;
-    color:black;
+.subirArchivo{
+    width: 100%;
+    height: 100%;
+    background-color: #EF3340;
+    color: white;
+    border: 2px solid #EF3340;
 }
+
 
 #descripcion{
 
@@ -298,22 +299,22 @@
 
 #registrarse{
 
-    background-color: black;
-    border: 1px solid beige;   
+    background-color: #EF3340;
+    border: 1px solid #EF3340;   
     text-align: center;
     width:200px;
     height: 50px;
-}
-#registrarse a{
     color:white;
 }
+
 #cancelar{
 
-    background-color: beige;
-    border: 1px solid black;    
+    background-color: #EF3340;
+    border: 1px solid #EF3340;    
     text-align: center;
     width:200px;
     height: 50px;
+    color:white;
 }
 #comentario-moderador{
 
@@ -330,5 +331,5 @@
 
 /*javascript*/
 .nav_side{
-    width:250px;
+    width:210px;
 }
