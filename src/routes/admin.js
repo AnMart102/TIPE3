@@ -107,8 +107,27 @@ router.post("/botonrechazar",(req,res)=>{
 
 
 
+router.get("/editarperfiladmin",(req,res)=>{
+    res.render("editar-perfil-administrador.ejs");
 
-router.post('/updateMiPerfilAdmin',updatePerfilAdmin.updateMiPerfilAdmin);
+})
+
+router.post("/updateadmin",(req,res)=>{
+    const Nombre=req.body.Nombre
+    const Correo=req.body.Correo
+    conn.query('UPDATE usuario SET Nombre = ?, Correo = ? WHERE Rol="Admin"', [Nombre,Correo], (error,results) =>{
+        if(error){
+            throw error;
+        }else{
+            res.redirect('/Dashboard');
+        }
+    })
+
+
+})
+
+
+
 
 //RUTA MOSTRAR QUERYS de administrar solicitudes de pymes 
 router.get('/PONER NOMBRE',solicitudPymeAdmin.administrarSolicitudes);//poner el nombre que el andres le puso

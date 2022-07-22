@@ -1,10 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
-const http = require("http");
-const socketio = require("socket.io");
-const server = http.createServer(app);
-const io = socketio.listen(server);
 const path = require('path');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
@@ -17,7 +13,6 @@ const PassportLocal = require('passport-local').Strategy;
 
 
 app.set('port',process.env.PORT || 3000);
-// require("./public/js/socket.js")(io,app);
 app.set('views',path.join(__dirname,'views')); 
 app.set('view engine','ejs');
 //Middleware
