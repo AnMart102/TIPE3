@@ -47,7 +47,7 @@ const { Router } = require('express');
 
 router.get("/user/:Rut",(req,res)=>{
     
-    res.redirect('estadisticasPyme.ejs')
+    res.render('estadisticasPyme.ejs')
 });
 
 
