@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Custom CSS -->
 
-    <link rel="stylesheet" href="../public/css/index.css" type="text/css">
+    <link rel="stylesheet" href="/css/index.css" type="text/css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <title>Index</title>
   </head>
@@ -51,8 +51,8 @@
           <img src="img/logo-municipalidad.png" width="100px" height="100px">
         </div>
         <h2>bienvenido a la sección de emprendimientos</h2>
-          <form action="#" method="post" target="_blank">
-            <input id="buscar" type="search" name="busquedaPyme" placeholder="Buscar pyme">
+          <form action="/busca" method="post" target="_blank">
+            <input id="buscar" type="search" name="Nombre_pyme" placeholder="Buscar pyme">
             <input id="buscar-buttom" type="submit" value="Buscar">
           </form>
      </div>
@@ -62,14 +62,14 @@
           <!-- <h2>Categorías de emprendimientos</h2>
           <p>busque la categoría de su emprendimiento</p> -->
         
-        <div class="rowCategorias">
-          <% for(var i = 0; i < datos2.length; i++){ %>
-          <div class="categoria"><a href="/<%= datos2[i].id_categorias %>"><p><%= datos2[i].categorias %></p><div class="categoria"></div></a></div>
-          <% } %>
-        </div>
+          <div class="rowCategorias">
 
+            <div class="categoria"><a href="/Ropa"><p>Ropa y Accesorios</p></a></div>
+            <div class="categoria"><a href="/Deco"><p>Decoracion</p></a></div>
+            <div class="categoria"><a href="/Arte"><p>Artesania</p></a></div>
+
+          </div>
         </div>
-        
       </div>
       
       <div id="emprendimientos-locales">
@@ -103,7 +103,7 @@
     <script src="js/nav-horizontal-move.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="../public/js/socket2.js"></script>
+    <script src="/js/socket2.js"></script>
     <script>
       socket2 = io()
 

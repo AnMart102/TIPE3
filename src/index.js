@@ -1,6 +1,10 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
+const http = require("http");
+const socketio = require("socket.io");
+const server = http.createServer(app);
+const io = socketio.listen(server);
 const path = require('path');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
@@ -13,6 +17,7 @@ const PassportLocal = require('passport-local').Strategy;
 
 
 app.set('port',process.env.PORT || 3000);
+// require("./public/js/socket.js")(io,app);
 app.set('views',path.join(__dirname,'views')); 
 app.set('view engine','ejs');
 //Middleware
@@ -39,8 +44,10 @@ passport.use(new PassportLocal(function(username,password,done){
                    user = resp[0].Correo;
                    pass = resp[0].Contrasena;
                    rol  = resp[0].Rol;
+                   rut = resp[0].Rut;
                    module.exports = {
                         rol1: rol,
+                        rut1:rut,
                    }
               }
           if(username === user && password ===pass){
@@ -70,6 +77,8 @@ app.use(require('./routes/registro.js'));
 app.use(require('./routes/index-views.js'));
 app.use(require('./routes/admin.js'));
 app.use(require('./routes/login.js'));
+
+
 // app.use(require('./public/js/socket.js'));
 //SOLO USAR DROP AL FINAL O PRODUCIRA PROBLEMAS CON LA TABLA A ELIMINAR POR LOS DATOS
 

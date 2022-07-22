@@ -45,8 +45,9 @@ const { Router } = require('express');
 
 
 
-router.get("/user",(req,res)=>{
-    res.render('estadisticasPyme.ejs')
+router.get("/user/:Rut",(req,res)=>{
+    
+    res.redirect('estadisticasPyme.ejs')
 });
 
 
@@ -55,13 +56,13 @@ router.get("/user",(req,res)=>{
 
 
 //RUTA PARA MOSTRAR Editar perfil usuario
-router.get('/POR PONER /:Rut', (req, res)=>{//poner el nombre que creee el andres de la vista
+router.get('/edit/:Rut', (req, res)=>{//poner el nombre que creee el andres de la vista
     const Rut = req.params.Rut;
-    conn.query('SELECT Nombre, ApellidoP, ApellidoM, Correo, Telefono, Nombre_pyme, Descripcion, RSH, Medio_pago, Medio_entrega, tipoTienda, Empresa_registrada, Actividades_SII, Patente_permiso, R_sanitaria, estado_sol, Sitio_web, Facebook, Whatsapp, Instagram, calle, numero, CasaDepto, localidad, PoblaVilla, categorias, archivo, sub_cat FROM usuario AS u JOIN direccion as d JOIN formulario_solicitud as f JOIN archivos as a JOIN categorias as c JOIN subcat as s WHERE u.Rut = ? AND u.Rut=f.Rut AND u.id_direccion=d.id_direccion AND f.id_formulario=a.id_formulario AND f.id_formulario=c.id_formulario AND c.id_categorias=s.id_categorias AND Rol = "User"', [Rut], (error, results)=>{
+    conn.query('SELECT Nombre, ApellidoP, ApellidoM, Correo, Telefono, Nombre_pyme, Descripcion, RSH, Medio_pago, Medio_entrega, tipoTienda, Empresa_registrada, Actividades_SII, Patente_permiso, R_sanitaria, estado_sol, Sitio_web, Facebook, Whatsapp, Instagram, calle, numero, CasaDepto, localidad, PoblaVilla, categorias FROM usuario AS u JOIN direccion as d JOIN formulario_solicitud as f JOIN categorias as c WHERE u.Rut = ? AND u.Rut=f.Rut AND u.Rut=d.Rut AND f.id_formulario=c.id_formulario AND Rol = "User";', [Rut], (error, results)=>{
         if(error){
             throw error;
         }else{
-            res.render('/POR PONER.ejs', {usuario:results[0]});//poner el nombre que creee el andres de la vista
+            res.render('editarPerfilUsuario.ejs', {usuario:results[0]});//poner el nombre que creee el andres de la vista
         }
     })
 })

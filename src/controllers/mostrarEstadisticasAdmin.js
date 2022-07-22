@@ -6,7 +6,7 @@ const router = express.Router();
 const conn = require('../database');
 
 exports.mostrarEstAdmin = (req, res)=>{
-    conn.query('SELECT Nombre_pyme,Nombre,ApellidoP,ApellidoM,categorias,estado_sol FROM formulario_solicitud as f JOIN usuario as u JOIN categorias as c WHERE f.id_formulario=c.id_formulario AND f.Rut=u.Rut and (f.estado_sol="En espera" or f.estado_sol="Modificacion");', (error,results) =>{
+    conn.query('SELECT id_formulario,Nombre_pyme,Nombre,ApellidoP,ApellidoM,categorias,estado_sol FROM formulario_solicitud as f JOIN usuario as u JOIN categorias as c WHERE f.id_formulario=c.id_formulario AND f.Rut=u.Rut and f.estado_sol="En espera" ;', (error,results) =>{
         if(error){
             throw error;
         }else{

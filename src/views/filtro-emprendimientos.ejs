@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Custom CSS -->
 
-    <link rel="stylesheet" href="../public/css/filtrar-emprendimientos.css" type="text/css">
+    <link rel="stylesheet" href="/css/filtrar-emprendimientos.css" type="text/css">
     <title>Filtrar emprendimiento</title>
   </head>
 
@@ -142,7 +142,7 @@
 
           <div class="row">
             <div class="col-3 col-descargar-documentos">
-              <div class="datos-representante"> <a href="/login" download="">Descargar archivos adjuntos</a></div>
+              <div class="datos-representante"> <a href="#" download="">Descargar archivos adjuntos</a></div>
             </div>
             <div class="col-3 col-descargar-documentos">
               <div class="datos-representante"> <a href="#"> Abrir link de redes sociales</a></div>
@@ -153,13 +153,31 @@
 
       <div id="botones-filtro">
         <div class="boton-filtro">
-          <button class="botones-moderador">Aceptar</button>
+          <form id="formulario" class="container-fluid" action="/botonaceptar" method="post">
+              <input type="hidden"  name="Estado_sol" value=2>
+              <input type="hidden"  name="Id_formulario" value='<%=formulario[0].id_formulario%>'>
+              <input id="siguiente" type="submit" value='Aprovar' class="botones-moderador">
+                <!-- <a href="#">registrarse</a> -->
+          </form>
+        </div>
+
+
+
+        <div class="boton-filtro">
+          <form id="formulario" class="container-fluid" action="/botonmodificar" method="post">
+            <input type="hidden"  name="Estado_sol" value=4>
+            <input type="hidden"  name="Id_formulario" value='<%=formulario[0].id_formulario%>'>
+            <input id="siguiente" type="submit" value='Modificar' class="botones-moderador">
+              <!-- <a href="#">registrarse</a> -->
+        </form>
         </div>
         <div class="boton-filtro">
-          <button class="botones-moderador">Modificar</button>
-        </div>
-        <div class="boton-filtro">
-          <button class="botones-moderador">Rechazar</button>
+          <form id="formulario" class="container-fluid" action="/botonrechazar" method="post">
+            <input type="hidden"  name="Estado_sol" value=3>
+            <input type="hidden"  name="Id_formulario" value='<%=formulario[0].id_formulario%>'>
+            <input id="siguiente" type="submit" value='Rechazar' class="botones-moderador">
+              <!-- <a href="#">registrarse</a> -->
+        </form>
         </div>
       </div>
 

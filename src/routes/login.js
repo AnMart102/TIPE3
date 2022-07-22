@@ -17,16 +17,18 @@ router.post('/login',passport.authenticate('local',{
 
 router.get('/correcto', (req,res,next)=>{
     if(req.isAuthenticated()) return next();
-    
     res.redirect('/login');
 },(req,res) =>{
-    
+
     let op = require("../index.js")
     let tipo_usuario = op.rol1;
+    let identificador=op.rut1;
+
     if(tipo_usuario==="Admin"){
         res.redirect('/Dashboard');
+
     }else if(tipo_usuario==="User"){
-        res.redirect('/user');
+        res.redirect('/edit/'+ identificador);
     }   
 });
 
