@@ -20,24 +20,18 @@
       <div id="opciones-menu">
         <a href="#">
           <div class="opcion">
-            <i class="fas fa-search"></i>
-            <h4>search</h4>
+            <i class="fa-solid fa-chart-line"></i>
+            <h4>Analítica</h4>
           </div>
         </a>
 
         <a href="">
           <div class="opcion">
-            <i class="fas fa-house"></i>
-            <h4>search</h4>
+            <i class="fa-solid fa-gear"></i>
+            <h4>Editar perfil</h4>
           </div>
         </a>
 
-        <a href="#">
-          <div class="opcion">
-            <i class="fas fa-gear"></i>
-            <h4>search</h4>
-          </div>
-        </a>
         
       </div>
     </nav>
@@ -46,10 +40,10 @@
         <div id="usuario">
           <div id="usuario-texto">
             <div id="bloque-usuario-texto">
-              <a class="a1" href="#">Administrador</a>
+              <a id="Administrador" href="#">Administrador</a>
             </div>
             <div id="bloque-usuario-texto">
-              <a class="a2" href="#">Account settings</a>
+              <a id="Account" href="#">Account settings</a>
             </div>
           </div>
           <div id="foto-usuario">
@@ -59,44 +53,30 @@
           </div>
         </div>
       </nav>
-      <div id="datos-del-usuario">
-        <div class="columna-datos">
-          <div id="editar-perfil-encabezado">
-            <h2>Editar mi perfil</h2>
-          </div>
-              <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Nombre">
-              <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Apellido 1">
-              <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Apellido 2">
-              <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Dirección">
-              <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Rut sin punto y con guion">
-
-        </div>
-        <div class="columna-datos">
-          <div id="editar-perfil-encabezado">
-          </div>
-          <INPUT class="datos-editar-perfil" type="tel" name="nombre" placeholder="Numero de celular">
+      <form action="">
+        <div id="datos-del-usuario">
+          <div class="columna-datos">
+            <div id="editar-perfil-encabezado">
+              <h2>Editar mi perfil</h2>
+            </div>
             <INPUT class="datos-editar-perfil" type="text" name="nombre" placeholder="Email">
-            <INPUT class="datos-editar-perfil" type="password" name="nombre" placeholder="Contrasena">
-            <INPUT class="datos-editar-perfil" type="password" name="nombre" placeholder="Repetir contrasena">          
-        </div>
-        
-      </div>
-      <div id="botones-enviar-formulario">
-        <button id="registrarse">
-          <a href="#">Editar</a>
-        </button>
-        <button id="cancelar">
-          <a href="#">cancelar</a>
-        </button>
+            <INPUT class="datos-editar-perfil" type="password" name="nombre" placeholder="Contraseña">       
+          </div>
           
-      </div>
+        </div>
+        <div id="alinear-botones">
+          <button id="Editar" type="submit" value="Submit">Editar</button>
+          <button id="Resetear" type="reset" value="Reset">Reset</button>
+        </div>
+
+      </form>
     </div> 
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="../js/nav-vertical-move.js"></script>
+    <script src="../public/js/nav-vertical-move.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
