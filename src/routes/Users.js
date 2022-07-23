@@ -76,10 +76,7 @@ router.get('/edit/:Rut', (req,res,next)=>{
     })
 });
 //Ruta para mostrar vitrina pyme
-router.get('/Emprendimiento/:id_formulario', (req,res,next)=>{
-    if(req.isAuthenticated()) return next();
-    res.redirect('/login');
-},(req,res) =>{
+router.get('/Emprendimiento/:id_formulario',(req,res) =>{
     const id_formulario = req.params.id_formulario;
     conn.query('SELECT Nombre, ApellidoP, ApellidoM, Correo, Telefono, Nombre_pyme, Descripcion, RSH, Medio_pago, Medio_entrega,Horario,tipoTienda ,Empresa_registrada, estado_sol, Sitio_web, Facebook, Whatsapp, Instagram, calle, numero, CasaDepto, localidad, PoblaVilla, categorias FROM usuario AS u JOIN direccion as d JOIN formulario_solicitud as f JOIN categorias as c WHERE f.id_formulario = ? AND u.Rut=f.Rut AND u.Rut=d.Rut AND f.id_formulario=c.id_formulario AND Rol = "User"', [id_formulario], (error, results)=>{
         if(error){

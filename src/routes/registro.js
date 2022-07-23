@@ -62,7 +62,7 @@ router.post('/registroD',(req,res)=>{
 });
 
 router.get('/registroF',(req,res)=>{
-    conn.query('SELECT Rut FROM usuario ORDER BY Rut DESC LIMIT 1', (err,resp,campos) => {
+    conn.query('SELECT Rut FROM usuario ORDER BY tiempo DESC LIMIT 1', (err,resp,campos) => {
         console.log(resp);
         res.render('registroF.ejs',{
         InfoRut : resp
@@ -130,7 +130,7 @@ router.post('/registroS',(req,res)=>{
     if(error){
         console.log(error);
     }else{
-        res.redirect('/');
+        res.redirect('/login');
     } 
 })
 

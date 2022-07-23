@@ -4,7 +4,7 @@ const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',//Poner clave propia
-    database: 'tipecartagena'
+    database: 'tipe3grupo1'
 });
 
 conn.connect(function (err){
