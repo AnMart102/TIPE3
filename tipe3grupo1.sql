@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.3.0-dev+20220722.bbf4e29d52
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-07-2022 a las 01:36:10
+-- Tiempo de generación: 23-07-2022 a las 04:56:57
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.4
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,31 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tipecartagena`
+-- Base de datos: `tipe3grupo1`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `administrador`
---
-
-CREATE TABLE `administrador` (
-  `Rut` varchar(10) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
-  `ApellidoP` varchar(100) NOT NULL,
-  `ApellidoM` varchar(100) NOT NULL,
-  `Correo` varchar(100) NOT NULL,
-  `Contrasena` varchar(16) NOT NULL,
-  `Telefono` varchar(13) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `administrador`
---
-
-INSERT INTO `administrador` (`Rut`, `Nombre`, `ApellidoP`, `ApellidoM`, `Correo`, `Contrasena`, `Telefono`) VALUES
-('20415814-2', 'Fernando', 'Vargas', 'Castillo', 'Fernando.vargas@alumnos.uv.cl', '1234', NULL);
 
 -- --------------------------------------------------------
 
@@ -93,12 +70,8 @@ INSERT INTO `categorias` (`id_categorias`, `categorias`, `id_formulario`, `tiemp
 (1, 'Ropa y Accesorios', 1, '1900-01-13 00:00:00'),
 (2, 'Decoracion', 2, '2022-05-09 00:00:00'),
 (3, 'Artesania', 3, '1900-01-10 00:00:00'),
-(5, 'Construccion', 5, '2022-07-22 18:25:49'),
 (6, 'Comida', 6, '2022-07-22 18:28:23'),
-(7, 'Actividades inmobiliarias', 7, '2022-07-22 18:44:48'),
-(8, 'Ropa y Accesorios', 4, '2022-05-23 21:13:42'),
-(9, 'Muebleria', 8, '2022-07-22 18:44:48'),
-(10, 'Ropa y Accesorios', 9, '2022-07-22 18:50:38');
+(12, 'Muebleria', 8, '2022-07-22 22:45:47');
 
 -- --------------------------------------------------------
 
@@ -123,10 +96,7 @@ INSERT INTO `direccion` (`Rut`, `calle`, `numero`, `CasaDepto`, `localidad`, `Po
 ('10243567-9', 'Las torcasas', 2020, 'casa', 'El tabo', 'Pobla'),
 ('10102312-9', 'trampas', 222, 'casa', 'cartagena', 'poblacion 3'),
 ('13452388-6', 'trecetrece', 1112, 'depto', 'Cartagena', 'poblacion 1'),
-('4235757-8', 'Los Alamos', 342, 'casa', 'Cartagena', 'Villa los acacios'),
-('4235757-8', 'abc', 232, 'casa', 'Cartagena', 'Villa dulce'),
 ('20202020-5', 'Arturo Prat', 2333, 'casa', 'Cartagena', 'Villa Frez'),
-('12234566-9', 'JJ Cruz', 342, 'casa', 'Cartagena', 'Villa Dulce'),
 ('15123534-4', 'Manuel Rodriguez', 335, 'casa', 'El Tabo', 'Pobl. Las vertientes');
 
 -- --------------------------------------------------------
@@ -164,13 +134,9 @@ CREATE TABLE `formulario_solicitud` (
 INSERT INTO `formulario_solicitud` (`id_formulario`, `Nombre_pyme`, `Descripcion`, `RSH`, `Medio_pago`, `Medio_entrega`, `Horario`, `Empresa_registrada`, `Actividades_SII`, `Patente_permiso`, `R_sanitaria`, `estado_sol`, `Sitio_web`, `Facebook`, `Whatsapp`, `Instagram`, `Comentario_admin`, `tipoTienda`, `Rut`) VALUES
 (1, 'RopasLindas', 'Ropa linda', NULL, 'Efectivo', NULL, '', 'Si', NULL, NULL, NULL, 'Aprobado', 'https://www.google.cl', 'https://www.facebook.com', 'https://web.whatsapp.com', 'https://www.instagram.com\r\n', NULL, 'Tienda Fisica', '10243567-9'),
 (2, 'DecoHogarCartagena', 'Tecnologia ventaaaas', NULL, '', NULL, '', 'No', NULL, NULL, NULL, 'Aprobado', 'https://www.google.cl', 'https://www.facebook.com', 'https://web.whatsapp.com', 'https://www.instagram.com', NULL, 'Tienda Fisica', '13452388-6'),
-(3, 'MiArte', 'Arte', NULL, 'Efectivo', 'Delivery', '', 'Si', NULL, NULL, NULL, 'En espera', 'https://www.google.cl', 'https://www.facebook.com', 'https://web.whatsapp.com', NULL, NULL, 'Tienda Fisica', '10102312-9'),
-(4, 'Accesorias primos', 'Accesorios para todas las personas, grandes y chicos.', NULL, 'Efectivo, tarjeta y transferencia', 'Retiro en tienda', 'Todo el dia', 'No', NULL, NULL, NULL, 'En espera', NULL, NULL, NULL, NULL, NULL, 'Tienda Fisica', '23413567-8'),
-(5, 'Rodamientos S.A', 'venta de productos de ferreteria', NULL, 'Efectivo/tarjeta', 'Retiro en tienda', '', 'Si', NULL, NULL, NULL, 'Aprobado', 'https://www.google.cl', 'https://www.facebook.com', 'https://web.whatsapp.com', 'https://www.instagram.com', NULL, 'Tienda Fisica', '12234566-9'),
+(3, 'MiArte', 'Arte', NULL, 'Efectivo', 'Delivery', '', 'Si', NULL, NULL, NULL, 'Aprobado', 'https://www.google.cl', 'https://www.facebook.com', 'https://web.whatsapp.com', NULL, NULL, 'Tienda Fisica', '10102312-9'),
 (6, 'Bazar donde Andres', 'venta de abarrotes', NULL, 'Efectivo', 'Retiro en tienda', '', 'Si', NULL, NULL, NULL, 'Aprobado', 'https://www.google.cl', 'https://www.facebook.com', 'https://web.whatsapp.com', 'https://www.instagram.com', NULL, 'Tienda Fisica', '15123534-4'),
-(7, 'Hostal Tu casita', 'residencia / hostal', NULL, 'efectivo / tarjeta', NULL, '', '', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, 'Tienda Fisica', '4235757-8'),
-(8, 'Muebles finissimo', 'venta de muebles', NULL, 'Efectivo', 'Retiro en tienda', '', '', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, 'Tienda Fisica', '20202020-5'),
-(9, 'Ventas AR', 'venta de aparatos tecnológicos', NULL, '1', 'Delivery', 'todo el dia', 'Si', NULL, NULL, NULL, 'Aprobado', '', 'https://www.facebook.com', '', 'https://www.instagram.com', NULL, 'Tienda Fisica', '4235757-8');
+(8, 'Muebles finissimo', 'venta de muebles', NULL, 'Efectivo', 'Retiro en tienda', '', '', NULL, NULL, NULL, 'Aprobado', NULL, NULL, NULL, NULL, NULL, 'Tienda Fisica', '20202020-5');
 
 -- --------------------------------------------------------
 
@@ -190,8 +156,7 @@ CREATE TABLE `subcat` (
 --
 
 INSERT INTO `subcat` (`id_subcat`, `sub_cat`, `Estado_subcat`, `id_categorias`) VALUES
-(5, 'Trajes de baño', 'En espera', 1),
-(6, 'Tecnología', 'En espera', 10);
+(5, 'Trajes de baño', 'En espera', 1);
 
 -- --------------------------------------------------------
 
@@ -219,24 +184,13 @@ INSERT INTO `usuario` (`Rut`, `Nombre`, `ApellidoP`, `ApellidoM`, `Correo`, `Con
 ('10102312-9', 'Jose', 'Loyola', 'Hidalgo', 'jlh@gmail.com', '1313', '912121222', 'User', '2022-05-01 00:08:03'),
 ('10232134-5', 'Administradores', 'TI', 'PE', 'grupo1@alumnos.uv.cl', 'TIPE3', '967691027', 'Admin', '2022-05-01 00:00:00'),
 ('10243567-9', 'Luis ', 'Prat', 'Otono', 'generalcruz@gmail.com', '222', '946372819', 'User', '2022-05-19 03:13:01'),
-('12234566-9', 'Juan', 'Perez', 'Martinez', '123unpasi@gmail.com', '1232', '+56987655678', 'User', '2022-07-22 18:21:33'),
 ('13452388-6', 'Juan', 'Perez', 'Perez', 'perezperez1@gmail.com', '123458', '987654329', 'User', '1900-01-04 00:00:00'),
 ('15123534-4', 'Andres', 'Ulloa', 'Fernandez', 'Aandfer@gmail.com', '15520', '+56987645578', 'User', '2022-07-22 18:26:49'),
-('19876832', 'Allan', 'Reus', 'Reus', 'allnres@gmail.vom', 'allan', '+56992255443', 'User', '2022-07-22 18:49:04'),
-('20202020-5', 'Aracelly', 'Perez', 'Souza', 'arapesou@gmail.com', 'araso', '+56988556677', 'User', '2022-07-22 18:40:43'),
-('20343125-5', 'Andres', 'Martínez', 'Jeldes', 'andresmart@gmail.com', '12345678', '967691028', 'User', '2022-07-17 21:35:55'),
-('23413567-8', 'Maria', 'Gonzalez', 'Brereton', 'xs@gmail.com', '28432', '923124325', 'User', '2022-05-19 01:14:15'),
-('4235757-8', 'Javiera', 'Lopez', 'Arancibia', 'javar@gmail.com', 'uwuwu', '+56999655678', 'User', '2022-07-22 18:40:43');
+('20202020-5', 'Aracelly', 'Perez', 'Souza', 'arapesou@gmail.com', 'araso', '+56988556677', 'User', '2022-07-22 18:40:43');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `administrador`
---
-ALTER TABLE `administrador`
-  ADD PRIMARY KEY (`Rut`);
 
 --
 -- Indices de la tabla `archivos`
@@ -292,19 +246,19 @@ ALTER TABLE `archivos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_categorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `formulario_solicitud`
 --
 ALTER TABLE `formulario_solicitud`
-  MODIFY `id_formulario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_formulario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `subcat`
 --
 ALTER TABLE `subcat`
-  MODIFY `id_subcat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_subcat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
