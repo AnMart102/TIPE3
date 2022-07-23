@@ -23,7 +23,7 @@
 
       <div id="opciones-menu">
 
-        <a href="">
+        <a href="/user/<%= Rut%>">
           <div class="opcion">
             <i class="fa-solid fa-chart-line"></i>
             <h4>Estadísticas</h4>
@@ -36,7 +36,7 @@
           </div>
         </a>
 
-        <a href="#">
+        <a href="/edit/<%= Rut%>">
           <div class="opcion">
             <i class="fas fa-gear"></i>
             <h4>Editar perfil</h4>
@@ -50,10 +50,10 @@
         <div id="usuario">
           <div id="usuario-texto">
             <div id="bloque-usuario-texto">
-              <a id="Administrador" href="#">Usuario</a>
+              <a id="Administrador" href="/user/<%= Rut%>">Usuario</a>
             </div>
             <div id="bloque-usuario-texto">
-              <a id="Account" href="#">Account settings</a>
+              <a id="Account" href="/edit/<%= Rut%>">Account settings</a>
             </div>
           </div>
           <div id="foto-usuario">

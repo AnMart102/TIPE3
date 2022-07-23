@@ -45,9 +45,14 @@ const { Router } = require('express');
 
 
 
-router.get("/user/:Rut",(req,res)=>{
-    
-    res.render('estadisticasPyme.ejs')
+router.get("/user/:Rut",(req,res,next)=>{
+    if(req.isAuthenticated()) return next();
+    res.redirect('/login');
+},(req,res) =>{
+    const rut=req.params.Rut;
+    res.render('estadisticasPyme.ejs',{
+        Rut:rut
+    })
 });
 
 
@@ -56,7 +61,10 @@ router.get("/user/:Rut",(req,res)=>{
 
 
 //RUTA PARA MOSTRAR Editar perfil usuario
-router.get('/edit/:Rut', (req, res)=>{//poner el nombre que creee el andres de la vista
+router.get('/edit/:Rut', (req,res,next)=>{
+    if(req.isAuthenticated()) return next();
+    res.redirect('/login');
+},(req,res) =>{
     const Rut = req.params.Rut;
     conn.query('SELECT Rut,Nombre_pyme, Descripcion, Horario, Sitio_web, Facebook, Whatsapp,Instagram FROM formulario_solicitud WHERE Rut =? ', [Rut], (error, results)=>{
         if(error){
@@ -68,7 +76,10 @@ router.get('/edit/:Rut', (req, res)=>{//poner el nombre que creee el andres de l
     })
 });
 //Ruta para mostrar vitrina pyme
-router.get('/Emprendimiento/:id_formulario', (req, res)=>{//poner el nombre que creee el andres de la vista
+router.get('/Emprendimiento/:id_formulario', (req,res,next)=>{
+    if(req.isAuthenticated()) return next();
+    res.redirect('/login');
+},(req,res) =>{
     const id_formulario = req.params.id_formulario;
     conn.query('SELECT Nombre, ApellidoP, ApellidoM, Correo, Telefono, Nombre_pyme, Descripcion, RSH, Medio_pago, Medio_entrega,Horario,tipoTienda ,Empresa_registrada, estado_sol, Sitio_web, Facebook, Whatsapp, Instagram, calle, numero, CasaDepto, localidad, PoblaVilla, categorias FROM usuario AS u JOIN direccion as d JOIN formulario_solicitud as f JOIN categorias as c WHERE f.id_formulario = ? AND u.Rut=f.Rut AND u.Rut=d.Rut AND f.id_formulario=c.id_formulario AND Rol = "User"', [id_formulario], (error, results)=>{
         if(error){
@@ -83,7 +94,10 @@ router.get('/Emprendimiento/:id_formulario', (req, res)=>{//poner el nombre que 
     })
 });
 
-router.post("/updateuser/:Rut",(req,res)=>{
+router.post("/updateuser/:Rut",(req,res,next)=>{
+    if(req.isAuthenticated()) return next();
+    res.redirect('/login');
+},(req,res) =>{
     const Nombre_pyme = req.body.Nombre_pyme;
     const Descripcion = req.body.Descripcion;
     const Horario = req.body.Horario;
