@@ -28,7 +28,7 @@ router.get('/correcto', (req,res,next)=>{
         res.redirect('/Dashboard');
 
     }else if(tipo_usuario==="User"){
-        res.redirect('/edit/'+ identificador);
+        res.redirect('/user/'+ identificador);
     }   
 });
 

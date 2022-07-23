@@ -5,7 +5,7 @@ const passport = require('passport');
 const { commit } = require('../database');
 const router = express.Router();
 const conn = require('../database');
-const modificarPyme = require('../controllers/modificarPyme.js');
+
 
 const { Router } = require('express');
 
@@ -58,14 +58,15 @@ router.get("/user/:Rut",(req,res)=>{
 //RUTA PARA MOSTRAR Editar perfil usuario
 router.get('/edit/:Rut', (req, res)=>{//poner el nombre que creee el andres de la vista
     const Rut = req.params.Rut;
-    conn.query('SELECT Nombre, ApellidoP, ApellidoM, Correo, Telefono, Nombre_pyme, Descripcion, RSH, Medio_pago, Medio_entrega, tipoTienda, Empresa_registrada, Actividades_SII, Patente_permiso, R_sanitaria, estado_sol, Sitio_web, Facebook, Whatsapp, Instagram, calle, numero, CasaDepto, localidad, PoblaVilla, categorias FROM usuario AS u JOIN direccion as d JOIN formulario_solicitud as f JOIN categorias as c WHERE u.Rut = ? AND u.Rut=f.Rut AND u.Rut=d.Rut AND f.id_formulario=c.id_formulario AND Rol = "User";', [Rut], (error, results)=>{
+    conn.query('SELECT Rut,Nombre_pyme, Descripcion, Horario, Sitio_web, Facebook, Whatsapp,Instagram FROM formulario_solicitud WHERE Rut =? ', [Rut], (error, results)=>{
         if(error){
             throw error;
         }else{
-            res.render('editarPerfilUsuario.ejs', {usuario:results[0]});//poner el nombre que creee el andres de la vista
+            console.log(results[0]);
+            res.render('editarPerfilUsuario.ejs', {usuario:results});//poner el nombre que creee el andres de la vista
         }
     })
-})
+});
 //Ruta para mostrar vitrina pyme
 router.get('/Emprendimiento/:id_formulario', (req, res)=>{//poner el nombre que creee el andres de la vista
     const id_formulario = req.params.id_formulario;
@@ -80,12 +81,31 @@ router.get('/Emprendimiento/:id_formulario', (req, res)=>{//poner el nombre que 
             
         }
     })
+});
+
+router.post("/updateuser/:Rut",(req,res)=>{
+    const Nombre_pyme = req.body.Nombre_pyme;
+    const Descripcion = req.body.Descripcion;
+    const Horario = req.body.Horario;
+    const Sitio_web = req.body.Sitio_web;   
+    const Facebook = req.body.Facebook;
+    const Whatsapp = req.body.Whatsapp;
+    const Instagram = req.body.Instagram;
+    const rut1=req.params.Rut;
+    conn.query('UPDATE formulario_solicitud SET Nombre_pyme = ?, Sitio_web = ?, Horario = ?,Facebook =?, Whatsapp=?, Instagram=?, Descripcion=? WHERE Rut= ?', [Nombre_pyme,Sitio_web,Horario,Facebook,Whatsapp,Instagram,Descripcion,rut1], (error,results) =>{
+        if(error){
+            throw error;
+        }else{
+           
+            res.redirect('/user/'+rut1);
+        }
+    })
+
+
 })
-
-
   
-//RUTA modificarPyme
-router.post('/guardar', modificarPyme.guardar);
+
+
 
 
 
