@@ -10,7 +10,12 @@ const res = require('express/lib/response');
 
 
 router.get('/registro',(req,res)=>{
-    res.render('registroU.ejs');
+    res.render('registroTerminosCondiciones.ejs');
+});
+
+router.get('/registroU',(req,res)=>{
+        res.render('registroU.ejs')
+
 });
 
 router.post('/registrou',(req,res)=>{
