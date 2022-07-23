@@ -12,7 +12,7 @@ const PassportLocal = require('passport-local').Strategy;
 //config
 
 
-app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 3007);
 app.set('views',path.join(__dirname,'views')); 
 app.set('view engine','ejs');
 //Middleware
